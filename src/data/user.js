@@ -33,6 +33,7 @@ const INFO = {
 		{
 			title: "Vue vs Google Maps using NCDOT data",
 			type: "both",
+			thumb: "images/thumb-ncdot.png",
 			description:
 				"Pulling data from the North Carolina Department of transportation open APIs, Users can discover the traffic and construction incidents around the state.",
 			logos: [
@@ -47,6 +48,7 @@ const INFO = {
 		{
 			title: "Fidelity Net Benefits Homepage",
 			type: "both",
+			thumb: "images/thumb-fidelity.png",
 			description:
 				"Worked with a small team of developers and designers to create the Fidelity net, benefits, designs, and markups in a combination of JavaScript, jQuery, Backbone.js, and SCSS. Image only.",
 			logos: [
@@ -58,25 +60,26 @@ const INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Site Image",
+			
 			link: "https://evilgeniuscreative.com/Fidelity/",
+		},
+		{
+			title: "Agile Metrics Explanation Animations",
+			type: "both",
+			thumb: "images/thumb-animation.png",
+			description:
+				"Animated introductions to Agile Metrics data analysis and tracking metrics for Rally Software.",
+			logos: [
+				{ id: "3211", software: "Wordpress", img: "images/edgeanimate.png" },
+			],
+			
+			link: "/animation",
 		},
 
 		{
-			title: "Los Olivos",
-			type: "both",
-			description:
-				"Former raw foods online shopping site based on a WordPress Shopp plug-in. Image only.",
-			logos: [
-				{ id: "2", software: "Wordpress", img: "images/wordpress.png" },
-				{ id: "95", software: "PHP", img: "images/php.png" },
-			],
-			linkText: "View Site Image",
-			link: "images/los-olivos.jpg",
-		},
-		{
 			title: "JMP User Community",
 			type: "both",
+			thumb:"images/thumb-jmpcom.png",
 			description:
 				"Among many dozens of custom components for the JMP Community, created a project and react to allow users to sort articles buy up to six different labels, when out of the box, the limitation was one built a react application on top of a free marker component to make this happen.",
 			logos: [
@@ -112,6 +115,7 @@ const INFO = {
 		{
 			title: "EA Answers Community Mega Menu",
 			type: "dev",
+			thumb:"thumb-ea.png",
 			description:
 				'As complicated as this "All Boards" mega menu looks, creating it was even more complicated, with data, based on both the site structure, JSON objects, and the number of crazy API algorithms in Freemarker, built in Khoros Community',
 			logos: [
@@ -135,6 +139,7 @@ const INFO = {
 		{
 			title: "Roku Community Homepage Tiles",
 			type: "devui",
+			thumb:"images/thumb-roku.png",
 			description:
 				"New designs and functionality for Roku's community homepage navigation tiles, built in Khoros Community.",
 			logos: [
@@ -156,6 +161,7 @@ const INFO = {
 		{
 			title: "Brunswick Boating Companies Communities",
 			type: "devui",
+			thumb: "images/thumb-brunswick.png",
 			description:
 				"Four Khoros Communities built from one using top-level categories for Brunswick's Sea Ray Boats, Mercury Racing, Boston Whaler, and Ripl.",
 			logos: [
@@ -174,9 +180,11 @@ const INFO = {
 			linkText: "View Project",
 			link: "https://community.brunswick.com/",
 		},
+
 		{
 			title: "Macmillan Communities redesign and sliding menus",
 			type: "devui",
+			thumb: "images/thumb-mcmillan.png",
 			description:
 				"Integrated a custom menu slide-out that wraps the entire Khoros Community page content, and is populated both by site structure and via JSON for off-community pages. The custom sections are Browse, About, and Help, and the same for their sister sites.",
 			logos: [
@@ -198,6 +206,7 @@ const INFO = {
 		},
 		{
 			title: "Sephora Community custom email formatting",
+			thumb: "images/thumb-sephora.png",
 			type: "devui",
 			description:
 				"Worked closely with Sephora team to customize all Velocity-based Sephora Khoros Community emails to be consistent with the site design.",
@@ -220,6 +229,7 @@ const INFO = {
 		},
 		{
 			title: "Verizon Community custom menu",
+			thumb: "images/thumb-verizon.png",
 			description:
 				"Created a custom JS menu in their Khoros Community to meet their specific needs, as well as other customizations as needed.",
 			logos: [
@@ -241,6 +251,7 @@ const INFO = {
 		{
 			title: "Splunk Community profile preferences customization",
 			type: "dev",
+			thumb: "images/thumb-splunk.png",
 			description:
 				"Modified personal information of users to give the option to give lists of content that is specifically relevant to them based on their chosen preferences, or to turn it off.",
 			logos: [
@@ -262,6 +273,7 @@ const INFO = {
 		{
 			title: "Invoca customized sign in process",
 			type: "dev",
+			thumb: "images/thumb-invoca.png",
 			description:
 				"Customized sign in process to allow users to register and sign in all in one step.",
 			logos: [
@@ -287,6 +299,8 @@ const INFO = {
 		{
 			title: "Zoom homepage tiles display",
 			type: "devui",
+			thumb: "images/thumb-zoom.png",
+
 			description:
 				"Created a customized (and optional) JSON fed tile display for the home page when they choose to display.",
 			logos: [
@@ -313,6 +327,7 @@ const INFO = {
 		{
 			title: "Khoros Community Salesforce integration",
 			type: "dev",
+			thumb: "images/thumb-sisense.png",
 			description:
 				"Helped to integrate Salesforce ticket tracking into their customer support system.",
 			logos: [
@@ -339,6 +354,7 @@ const INFO = {
 		{
 			title: "JAMF Community constulting and tutorials",
 			type: "both",
+			thumb: "images/thumb-jamf.png",
 			description:
 				"Helped their staff to customize their site starting from basic HTML and CSS to the point where it is currently over 2 months of tutorials.",
 			logos: [
@@ -360,6 +376,8 @@ const INFO = {
 		},
 		{
 			title: "ESP Nutrition e-Commerce Site",
+			type: "both",
+			thumb: "images/thumb-ESP.png",
 			description:
 				"Nutritional supplement e-commerce site built in WordPress and Shopped plug-in. Image only",
 			logos: [
@@ -374,12 +392,13 @@ const INFO = {
 					img: "images/php.png",
 				},
 			],
-			linkText: "View Site Image",
+			
 			link: "images/ESP.jpg",
 		},
 		{
 			title: "Xactly corp Community customizations",
 			type: "dev",
+			thumb: "images/thumb-xactly.png",
 			description:
 				"Multiple customizations including sign in process, automated data filling, event management, and more.",
 			logos: [
@@ -405,6 +424,7 @@ const INFO = {
 		{
 			title: "Cisco OAuth Registry",
 			type: "both",
+			thumb: "images/thumb-cisco.png",
 			description:
 				"Working mockup for Cisco OAuth Registry built in Angular 1.x in Typescript in preparation for Angular 2, along with multiple other in-house apps and designs.",
 			logos: [
@@ -422,6 +442,7 @@ const INFO = {
 		{
 			title: "aWhere: Created weather app and living Style Guide",
 			type: "both",
+			thumb: "images/thumb-awhere.png",
 			description:
 				"Created both a weather app from Angularjs and D3.js to provide farmers in developing countries with accurate weather reports. Also created a living style guide for the company from Angularjs. No longer in business. Linked in only.",
 			logos: [
@@ -436,6 +457,7 @@ const INFO = {
 		{
 			title: "JMP.com AEM site work",
 			type: "both",
+			thumb: "images/thumb-jmp.png",
 			description:
 				"Worked in concert with the marketing and design team to create numerous pages and customizations in the JMP (a subsidiary of SAS) AEM company site..",
 			logos: [
@@ -452,6 +474,8 @@ const INFO = {
 		},
 		{
 			title: "AEM Discovery Summit site",
+			type: "both",
+			thumb: "images/thumb-jds.png",
 			description:
 				"Created the original discovery summit site and managed pages in AEM.",
 			logos: [
@@ -469,6 +493,7 @@ const INFO = {
 		{
 			title: "Capital Broadcasting Company",
 			type: "both",
+			thumb: "images/thumb-cbc.png",
 			description:
 				"CBC needed to renew their site and this was the top design at the time. Image only due to many changes on the site.",
 			logos: [
@@ -480,12 +505,13 @@ const INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Site Image",
+			
 			link: "images/cbc.jpg",
 		},
 		{
 			title: "Danser Guitar Works",
 			type: "both",
+			thumb: "images/thumb-danser.png",
 			description:
 				"Guitar shaped site for a custom luthier and builder. Image only.",
 			logos: [
@@ -498,32 +524,60 @@ const INFO = {
 				},
 				{ id: "295", software: "PHP", img: "images/php.png" },
 			],
-			linkText: "View Site Image",
+			
 			link: "images/danser.jpg",
 		},
 		{
-			title: "ESP Nutrition",
+			title: "Los Olivos",
 			type: "both",
+			thumb: "images/thumb-los-olivos.png",
 			description:
-				"Site selling nutrition coaching and supplements. Image only.",
+				"Former raw foods online shopping site based on a WordPress Shopp plug-in. Image only.",
 			logos: [
-				{ id: "321", software: "Wordpress", img: "images/wordpress.png" },
-				{ id: "159", software: "SASS", img: "images/sass.png" },
-				{
-					id: "189",
-					software: "Javascript",
-					img: "images/javascript.png",
-				},
-				{ id: "951", software: "PHP", img: "images/php.png" },
+				{ id: "2", software: "Wordpress", img: "images/wordpress.png" },
+				{ id: "95", software: "PHP", img: "images/php.png" },
 			],
-			linkText: "View Site Image",
-			link: "images/ESP.jpg",
+			
+			link: "images/los-olivos.jpg",
 		},
+		
 	],
 	animation: [
 		{
-
-		}
+			title:"Percentiles",
+			description:"What Percintiles are and how they relate to Agile Metrics",
+			link:"animation_files/PERCENTILES/percentiles.html"
+		},
+		{
+			title:"Polar Charts",
+			description:"What are polar charts and how can we use them in Agile Metrics?",
+			link:"animation_files/POLAR/polar.html"
+		},
+		{
+			title:"Predictability",
+			description:"What part does Predictability have in Agile Metrics",
+			link:"animation_files/PREDICTABILITY/predictability.html"
+		},
+		{
+			title:"Productivity",
+			description:"How do we best track Productivity in Agile Metrics?",
+			link:"animation_files/PRODUCTIVITY/productivity.html"
+		},
+		{
+			title:"Quality",
+			description:"What does Quality mean and how do we understand it in the context of Agile Metrics",
+			link:"animation_files/QUALITY/quality.html"
+		},
+		{
+			title:"RESPONSIVENESS",
+			description:"What is Responsiveness in Agile Metrics, what does it mean, and why we should track it.",
+			link:"animation_files/RESPONSIVENESS/responsiveness.html"
+		},
+		{
+			title:"OVERALL",
+			description:"Taking all the metrics above and displaying them as a group to get a bigger overview of how the team is doing.",
+			link:"animation_files/OVERALL/overall.html"
+		},
 	]
 };
 
