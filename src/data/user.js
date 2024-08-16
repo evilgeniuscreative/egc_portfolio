@@ -32,6 +32,7 @@ const INFO = {
 	projects: [
 		{
 			title: "Vue vs Google Maps using NCDOT data",
+			type: "both",
 			description:
 				"Pulling data from the North Carolina Department of transportation open APIs, Users can discover the traffic and construction incidents around the state.",
 			logos: [
@@ -45,6 +46,7 @@ const INFO = {
 
 		{
 			title: "Fidelity Net Benefits Homepage",
+			type: "both",
 			description:
 				"Worked with a small team of developers and designers to create the Fidelity net, benefits, designs, and markups in a combination of JavaScript, jQuery, Backbone.js, and SCSS. Image only.",
 			logos: [
@@ -62,6 +64,7 @@ const INFO = {
 
 		{
 			title: "Los Olivos",
+			type: "both",
 			description:
 				"Former raw foods online shopping site based on a WordPress Shopp plug-in. Image only.",
 			logos: [
@@ -72,7 +75,8 @@ const INFO = {
 			link: "images/los-olivos.jpg",
 		},
 		{
-			title: "JMP User Community customizations",
+			title: "JMP User Community",
+			type: "both",
 			description:
 				"Among many dozens of custom components for the JMP Community, created a project and react to allow users to sort articles buy up to six different labels, when out of the box, the limitation was one built a react application on top of a free marker component to make this happen.",
 			logos: [
@@ -107,6 +111,7 @@ const INFO = {
 
 		{
 			title: "EA Answers Community Mega Menu",
+			type: "dev",
 			description:
 				'As complicated as this "All Boards" mega menu looks, creating it was even more complicated, with data, based on both the site structure, JSON objects, and the number of crazy API algorithms in Freemarker, built in Khoros Community',
 			logos: [
@@ -129,6 +134,7 @@ const INFO = {
 		},
 		{
 			title: "Roku Community Homepage Tiles",
+			type: "devui",
 			description:
 				"New designs and functionality for Roku's community homepage navigation tiles, built in Khoros Community.",
 			logos: [
@@ -149,6 +155,7 @@ const INFO = {
 		},
 		{
 			title: "Brunswick Boating Companies Communities",
+			type: "devui",
 			description:
 				"Four Khoros Communities built from one using top-level categories for Brunswick's Sea Ray Boats, Mercury Racing, Boston Whaler, and Ripl.",
 			logos: [
@@ -169,6 +176,7 @@ const INFO = {
 		},
 		{
 			title: "Macmillan Communities redesign and sliding menus",
+			type: "devui",
 			description:
 				"Integrated a custom menu slide-out that wraps the entire Khoros Community page content, and is populated both by site structure and via JSON for off-community pages. The custom sections are Browse, About, and Help, and the same for their sister sites.",
 			logos: [
@@ -190,6 +198,7 @@ const INFO = {
 		},
 		{
 			title: "Sephora Community custom email formatting",
+			type: "devui",
 			description:
 				"Worked closely with Sephora team to customize all Velocity-based Sephora Khoros Community emails to be consistent with the site design.",
 			logos: [
@@ -231,6 +240,7 @@ const INFO = {
 		},
 		{
 			title: "Splunk Community profile preferences customization",
+			type: "dev",
 			description:
 				"Modified personal information of users to give the option to give lists of content that is specifically relevant to them based on their chosen preferences, or to turn it off.",
 			logos: [
@@ -251,6 +261,7 @@ const INFO = {
 		},
 		{
 			title: "Invoca customized sign in process",
+			type: "dev",
 			description:
 				"Customized sign in process to allow users to register and sign in all in one step.",
 			logos: [
@@ -275,6 +286,7 @@ const INFO = {
 		},
 		{
 			title: "Zoom homepage tiles display",
+			type: "devui",
 			description:
 				"Created a customized (and optional) JSON fed tile display for the home page when they choose to display.",
 			logos: [
@@ -300,6 +312,7 @@ const INFO = {
 		},
 		{
 			title: "Khoros Community Salesforce integration",
+			type: "dev",
 			description:
 				"Helped to integrate Salesforce ticket tracking into their customer support system.",
 			logos: [
@@ -325,6 +338,7 @@ const INFO = {
 		},
 		{
 			title: "JAMF Community constulting and tutorials",
+			type: "both",
 			description:
 				"Helped their staff to customize their site starting from basic HTML and CSS to the point where it is currently over 2 months of tutorials.",
 			logos: [
@@ -365,6 +379,7 @@ const INFO = {
 		},
 		{
 			title: "Xactly corp Community customizations",
+			type: "dev",
 			description:
 				"Multiple customizations including sign in process, automated data filling, event management, and more.",
 			logos: [
@@ -389,8 +404,9 @@ const INFO = {
 		},
 		{
 			title: "Cisco OAuth Registry",
+			type: "both",
 			description:
-				"Working mockup for Cisco OAuth Registry built in Angular 1.x in Typescript in preparation for Angular 2.",
+				"Working mockup for Cisco OAuth Registry built in Angular 1.x in Typescript in preparation for Angular 2, along with multiple other in-house apps and designs.",
 			logos: [
 				{ id: "17", software: "AngularJS", img: "images/angular.png" },
 				{
@@ -405,6 +421,7 @@ const INFO = {
 		},
 		{
 			title: "aWhere: Created weather app and living Style Guide",
+			type: "both",
 			description:
 				"Created both a weather app from Angularjs and D3.js to provide farmers in developing countries with accurate weather reports. Also created a living style guide for the company from Angularjs. No longer in business. Linked in only.",
 			logos: [
@@ -418,6 +435,7 @@ const INFO = {
 		},
 		{
 			title: "JMP.com AEM site work",
+			type: "both",
 			description:
 				"Worked in concert with the marketing and design team to create numerous pages and customizations in the JMP (a subsidiary of SAS) AEM company site..",
 			logos: [
@@ -450,6 +468,7 @@ const INFO = {
 		},
 		{
 			title: "Capital Broadcasting Company",
+			type: "both",
 			description:
 				"CBC needed to renew their site and this was the top design at the time. Image only due to many changes on the site.",
 			logos: [
@@ -466,6 +485,7 @@ const INFO = {
 		},
 		{
 			title: "Danser Guitar Works",
+			type: "both",
 			description:
 				"Guitar shaped site for a custom luthier and builder. Image only.",
 			logos: [
@@ -483,6 +503,7 @@ const INFO = {
 		},
 		{
 			title: "ESP Nutrition",
+			type: "both",
 			description:
 				"Site selling nutrition coaching and supplements. Image only.",
 			logos: [
@@ -499,6 +520,11 @@ const INFO = {
 			link: "images/ESP.jpg",
 		},
 	],
+	animation: [
+		{
+
+		}
+	]
 };
 
 export default INFO;
