@@ -46,21 +46,16 @@ const Project = (props) => {
 					<div className="project-title">
 						{title} ({tempType})
 					</div>
-					<div className="project-description">
-						<div className="projectthumb-wrap">
-							<div className="project-thumb">
-								<Link
-									href={link}
-									className="project-thumb"
-									style={{ backgroundImage: `url(${thumb})` }}
-								>
-									<img src={thumb} alt={title} />
-								</Link>
-							</div>
-							{description}
-						</div>
-						<div className="project-link"></div>
+
+					<div className="project-thumb-section">
+						<Link
+							href={link}
+							className="project-thumb"
+							style={{ backgroundImage: `url(${thumb})` }}
+						></Link>
 					</div>
+					<div className="project-description">{description}</div>
+					<div className="project-link"></div>
 				</div>
 			</div>
 		</React.Fragment>
