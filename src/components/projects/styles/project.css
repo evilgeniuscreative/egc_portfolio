@@ -24,6 +24,8 @@
 
 .project-container {
 	padding: 30px;
+	margin: 8px;
+	
 }
 
 .project-logo-wrap {
@@ -71,6 +73,21 @@
 .project-link-text {
 	padding-left: 20px;
 	font-weight: 700;
+}
+
+
+
+.project-thumb{
+	height: 160px;
+	width: 100%;
+	max-width: 100%;
+	background-size: contain;
+	background-position: cemter center;
+	                 
+}
+
+.projecct-thumb-section{
+	padding-top: 10px;
 }
 
 @media (max-width: 600px) {

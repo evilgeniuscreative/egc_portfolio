@@ -60,7 +60,7 @@ const INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			
+
 			link: "https://evilgeniuscreative.com/Fidelity/",
 		},
 		{
@@ -70,16 +70,20 @@ const INFO = {
 			description:
 				"Animated introductions to Agile Metrics data analysis and tracking metrics for Rally Software.",
 			logos: [
-				{ id: "3211", software: "Wordpress", img: "images/edgeanimate.png" },
+				{
+					id: "3211",
+					software: "Wordpress",
+					img: "images/edgeanimate.png",
+				},
 			],
-			
+
 			link: "/animation",
 		},
 
 		{
 			title: "JMP User Community",
 			type: "both",
-			thumb:"images/thumb-jmpcom.png",
+			thumb: "images/thumb-jmpcom.png",
 			description:
 				"Among many dozens of custom components for the JMP Community, created a project and react to allow users to sort articles buy up to six different labels, when out of the box, the limitation was one built a react application on top of a free marker component to make this happen.",
 			logos: [
@@ -115,7 +119,7 @@ const INFO = {
 		{
 			title: "EA Answers Community Mega Menu",
 			type: "dev",
-			thumb:"thumb-ea.png",
+			thumb: "images/thumb-ea.png",
 			description:
 				'As complicated as this "All Boards" mega menu looks, creating it was even more complicated, with data, based on both the site structure, JSON objects, and the number of crazy API algorithms in Freemarker, built in Khoros Community',
 			logos: [
@@ -139,7 +143,7 @@ const INFO = {
 		{
 			title: "Roku Community Homepage Tiles",
 			type: "devui",
-			thumb:"images/thumb-roku.png",
+			thumb: "images/thumb-roku.png",
 			description:
 				"New designs and functionality for Roku's community homepage navigation tiles, built in Khoros Community.",
 			logos: [
@@ -392,7 +396,7 @@ const INFO = {
 					img: "images/php.png",
 				},
 			],
-			
+
 			link: "images/ESP.jpg",
 		},
 		{
@@ -505,7 +509,7 @@ const INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			
+
 			link: "images/cbc.jpg",
 		},
 		{
@@ -515,7 +519,11 @@ const INFO = {
 			description:
 				"Guitar shaped site for a custom luthier and builder. Image only.",
 			logos: [
-				{ id: "210", software: "Wordpress", img: "images/wordpress.png" },
+				{
+					id: "210",
+					software: "Wordpress",
+					img: "images/wordpress.png",
+				},
 				{ id: "149", software: "SASS", img: "images/sass.png" },
 				{
 					id: "148",
@@ -524,7 +532,7 @@ const INFO = {
 				},
 				{ id: "295", software: "PHP", img: "images/php.png" },
 			],
-			
+
 			link: "images/danser.jpg",
 		},
 		{
@@ -537,48 +545,52 @@ const INFO = {
 				{ id: "2", software: "Wordpress", img: "images/wordpress.png" },
 				{ id: "95", software: "PHP", img: "images/php.png" },
 			],
-			
+
 			link: "images/los-olivos.jpg",
 		},
-		
 	],
 	animation: [
 		{
-			title:"Percentiles",
-			description:"What Percintiles are and how they relate to Agile Metrics",
-			link:"animation_files/PERCENTILES/percentiles.html"
+			title: "Percentiles",
+			description:
+				"What Percintiles are and how they relate to Agile Metrics",
+			link: "animation_files/PERCENTILES/percentiles.html",
 		},
 		{
-			title:"Polar Charts",
-			description:"What are polar charts and how can we use them in Agile Metrics?",
-			link:"animation_files/POLAR/polar.html"
+			title: "Polar Charts",
+			description:
+				"What are polar charts and how can we use them in Agile Metrics?",
+			link: "animation_files/POLAR/polar.html",
 		},
 		{
-			title:"Predictability",
-			description:"What part does Predictability have in Agile Metrics",
-			link:"animation_files/PREDICTABILITY/predictability.html"
+			title: "Predictability",
+			description: "What part does Predictability have in Agile Metrics",
+			link: "animation_files/PREDICTABILITY/predictability.html",
 		},
 		{
-			title:"Productivity",
-			description:"How do we best track Productivity in Agile Metrics?",
-			link:"animation_files/PRODUCTIVITY/productivity.html"
+			title: "Productivity",
+			description: "How do we best track Productivity in Agile Metrics?",
+			link: "animation_files/PRODUCTIVITY/productivity.html",
 		},
 		{
-			title:"Quality",
-			description:"What does Quality mean and how do we understand it in the context of Agile Metrics",
-			link:"animation_files/QUALITY/quality.html"
+			title: "Quality",
+			description:
+				"What does Quality mean and how do we understand it in the context of Agile Metrics",
+			link: "animation_files/QUALITY/quality.html",
 		},
 		{
-			title:"RESPONSIVENESS",
-			description:"What is Responsiveness in Agile Metrics, what does it mean, and why we should track it.",
-			link:"animation_files/RESPONSIVENESS/responsiveness.html"
+			title: "RESPONSIVENESS",
+			description:
+				"What is Responsiveness in Agile Metrics, what does it mean, and why we should track it.",
+			link: "animation_files/RESPONSIVENESS/responsiveness.html",
 		},
 		{
-			title:"OVERALL",
-			description:"Taking all the metrics above and displaying them as a group to get a bigger overview of how the team is doing.",
-			link:"animation_files/OVERALL/overall.html"
+			title: "OVERALL",
+			description:
+				"Taking all the metrics above and displaying them as a group to get a bigger overview of how the team is doing.",
+			link: "animation_files/OVERALL/overall.html",
 		},
-	]
+	],
 };
 
 export default INFO;
