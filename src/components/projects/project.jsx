@@ -6,7 +6,8 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import "./styles/project.css";
 
 const Project = (props) => {
-	const { softwareLogos, title, description, link, thumb, type } = props;
+	const { softwareLogos, title, description, linkText, link, thumb, type } =
+		props;
 
 	let tempType = "dev";
 	switch (type) {
@@ -16,9 +17,11 @@ const Project = (props) => {
 		case "both":
 			tempType = "Design & Development";
 			break;
-			break;
 		case "devui":
 			tempType = "Development & UI/UX design";
+			break;
+		case "print":
+			tempType = "Graphic Design";
 			break;
 		default:
 			break;
@@ -41,22 +44,33 @@ const Project = (props) => {
 	return (
 		<React.Fragment>
 			<div className="project">
-				<div className="project-container">
-					<div className="project-logo-wrap">{theLogos}</div>
-					<div className="project-title">
-						{title} ({tempType})
-					</div>
+				<Link to={link}>
+					<div className="project-container">
+						<div className="project-logo-wrap">{theLogos}</div>
+						<div className="project-title">
+							{title} ({tempType})
+						</div>
 
-					<div className="project-thumb-section">
-						<Link
-							href={link}
-							className="project-thumb"
-							style={{ backgroundImage: `url(${thumb})` }}
-						></Link>
+						<div className="project-thumb-section">
+							<div
+								href={linkText}
+								className="project-thumb"
+								style={{ backgroundImage: `url(${thumb})` }}
+							></div>
+						</div>
+						<div className="project-description">{description}</div>
+
+						<div className="project-link-icon"></div>
+
+						<div className="product-link-section">
+							<FontAwesomeIcon
+								className="project-link-icon"
+								icon={faLink}
+							/>
+							<div className="project-link-text">{link}</div>
+						</div>
 					</div>
-					<div className="project-description">{description}</div>
-					<div className="project-link"></div>
-				</div>
+				</Link>
 			</div>
 		</React.Fragment>
 	);

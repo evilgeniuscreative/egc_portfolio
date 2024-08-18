@@ -9,8 +9,10 @@ import Projects from "./pages/projects";
 import Articles from "./pages/articles";
 import ReadArticle from "./pages/readArticle";
 import Contact from "./pages/contact";
-import Designs from "./pages/designs"
+import Animation from "./pages/animations";
+import Designs from "./pages/designs";
 import Notfound from "./pages/404";
+import AllRegistrations from "./pages/allregistrations";
 
 import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
@@ -32,7 +34,8 @@ function App() {
 				<Route path="/articles" element={<Articles />} />
 				<Route path="/article/:slug" element={<ReadArticle />} />
 				<Route path="/contact" element={<Contact />} />
-				<Route path="/animation" element={<animation/>}/>
+				<Route path="/animation" element={<Animation />} />
+				<Route path="/allregistrations" element={<AllRegistrations />} />
 				<Route path="*" element={<Notfound />} />
 			</Routes>
 		</div>

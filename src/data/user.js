@@ -1,3 +1,7 @@
+const missing =
+	"This site no longer exists, but here's a screenshot of the original design.";
+const printed =
+	"This is a graphic design project, only so there is no site to go along with it.";
 const INFO = {
 	main: {
 		title: "Ian Kleinfeld, Software Developer, Front End Engineer, with a deep UX, UI, and Design background",
@@ -72,14 +76,46 @@ const INFO = {
 			logos: [
 				{
 					id: "3211",
-					software: "Wordpress",
+					software: "Edge Animate",
 					img: "images/edgeanimate.png",
 				},
 			],
 
 			link: "/animation",
 		},
-
+		{
+			title: "Best Diners in Town: Atlanta",
+			type: "print",
+			thumb: "images/thumb-bdit.jpg",
+			description:
+				printed +
+				" A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+			logos: [
+				{
+					id: 96813,
+					software: "Adobe InDesign",
+					img: "images/icon-id.png",
+				},
+			],
+			link: "http://evilgeniuscreative.com/portfolio/pdf/bdit.php",
+		},
+		{
+			title: "Coffee Price Report",
+			type: "print",
+			thumb: "images/thumb-coffee-report.png",
+			file: "images/print/coffee-report.jpg",
+			description:
+				printed +
+				" A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+			logos: [
+				{
+					id: 93813,
+					software: "Adobe InDesign",
+					img: "images/icon-id.png",
+				},
+			],
+			link: "http://evilgeniuscreative.com/portfolio/pdf/coffee.php",
+		},
 		{
 			title: "JMP User Community",
 			type: "both",
@@ -145,7 +181,7 @@ const INFO = {
 			type: "devui",
 			thumb: "images/thumb-roku.png",
 			description:
-				"New designs and functionality for Roku's community homepage navigation tiles, built in Khoros Community.",
+				"New icon designs and functionality for Roku's community homepage navigation tiles, built in Khoros Community with small bits of UI to engage visitors. Big improvement on original.",
 			logos: [
 				{
 					id: "5",
@@ -161,6 +197,22 @@ const INFO = {
 			],
 			linkText: "View Project",
 			link: "https://community.roku.com",
+		},
+		{
+			title: "The Future of Farming Poster",
+			type: "print",
+			thumb: "images/thumb-awhere-future-of-farming.jpg",
+			description:
+				printed +
+				" A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+			logos: [
+				{
+					id: 96813,
+					software: "Adobe InDesign",
+					img: "images/icon-id.png",
+				},
+			],
+			link: "showImage/awhere-future-of-farming.jpg",
 		},
 		{
 			title: "Brunswick Boating Companies Communities",
@@ -382,6 +434,8 @@ const INFO = {
 			title: "ESP Nutrition e-Commerce Site",
 			type: "both",
 			thumb: "images/thumb-ESP.png",
+			image: "images/ESP.jpg",
+			msg: missing,
 			description:
 				"Nutritional supplement e-commerce site built in WordPress and Shopped plug-in. Image only",
 			logos: [
@@ -397,7 +451,7 @@ const INFO = {
 				},
 			],
 
-			link: "images/ESP.jpg",
+			link: "showImages/ESP.jpg",
 		},
 		{
 			title: "Xactly corp Community customizations",
@@ -441,7 +495,7 @@ const INFO = {
 				{ id: "55", software: "Less", img: "images/less.png" },
 			],
 			linkText: "View Project",
-			link: "https://evilgeniuscreative.com/portfolio/COAR/build/prod/index.html",
+			link: "coarpage",
 		},
 		{
 			title: "aWhere: Created weather app and living Style Guide",
