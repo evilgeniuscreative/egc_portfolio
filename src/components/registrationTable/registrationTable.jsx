@@ -1,104 +1,67 @@
 import React from 'react';
 
-
-const RegistrationTable = (props) => {    
-    const { owner, locked, approved, created, expires, hasOwnershipToAccept, hasOwnerToApprove, type, consumer, consumerKey, consumerSecret, provider, description, parentKey } = props;
-   
-   
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
-
-    // const [registrations, setRegistrations] = useState([]);
-    // const [sortConfig, setSortConfig] = useState({ key:'1', direction: 'ascending' });
-
-    // const sortTable = (key) => {
-    //     const sortedData = [...registrations];
-    //     if (sortConfig && sortConfig.key === key && sortConfig.direction === 'ascending') {
-    //         sortedData.reverse();
-    //         setSortConfig({ key, direction: 'descending' });
-    //     } else {
-    //         sortedData.sort((a, b) => {
-    //             if (a[key] < b[key]) return -1;
-    //             if (a[key] > b[key]) return 1;
-    //             return 0;
-    //         });
-    //         setSortConfig({ key, direction: 'ascending' });
-    //     }
-    //     console.log(sortConfig );
-    //     setRegistrations(sortedData);
-    // };
-
+const RegistrationTable = (props) => {
+    const { data } = props;
 
     return (
-
-<div style={{ marginTop: '100px' }}> 
-    TABLE
-               <div className="registration-table">
+        <div style={{ marginTop: '100px' }}>
+            <div className="registration-table">
                 <table>
                     <thead>
-                        <th>
-                            <tbody>
-                                <tr>
-                                    <td>Owner</td>
-                                    <td>Locked</td>
-                                    <td>Approved</td>
-                                    <td>Created</td>
-                                    <td>Expires</td>
-                                    <td>+</td>
-                                </tr>
-                            </tbody>
-                        </th>
-                        </thead>
                         <tr>
-                            <tbody>
-                                <tr>
-                                    <td>{owner}</td>
-                                    <td>{locked}</td>
-                                    <td>{approved}</td>
-                                    <td>{created}</td>
-                                    <td>{expires}</td>
-                                    <td>
-                                        {hasOwnerToApprove}
-                                        {hasOwnershipToAccept}
-                                        {type}
-                                        {consumer}
-                                        {consumerKey}
-                                        {consumerSecret}
-                                        {provider}
-                                        {description}
-                                        {parentKey}
-                                    </td>
-                                </tr>
-                            </tbody>
+                            <th>Owner</th>
+                            <th>Locked</th>
+                            <th>Approved</th>
+                            <th>Created</th>
+                            <th>Expires</th>
+                            <th>+</th>
                         </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                        </tr>
+                        {  console.log('data', data) }
+                         {
+                          
+
+                            data.map((item, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{item.hasOwnerToApprove}</td>
+                                        <td>{item.hasOwnershipToAccept}</td>
+                                        <td>{item.type}</td>
+                
+                                        <td>{item.consumerKey}</td>
+                                        <td>{item.consumerSecret}</td>
+                                        <td>{item.description}</td>
+                                        <td>{item.parentKey}</td>
+                                    </tr>
+                                );
+                            })
+                        }
+                        <tr>
+                            <td>
+                                {/* {data.hasOwnerToApprove}
+                                {data.hasOwnershipToAccept}
+                                {data.type}
+                                {data.consumer}
+                                {data.consumerKey}
+                                {data.consumerSecret}
+                                {data.provider}
+                                {data.description}
+                                {data.parentKey} */}
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-        // <table className="coar-table">
-        //     <thead>
-        //     <tr>
-        //         <th onClick={() => sortTable('owner')}>Owner</th>
-        //         <th onClick={() => sortTable('created')}>Created</th>
-        //         <th onClick={() => sortTable('expires')}>Expires</th>
-        //         <th onClick={() => sortTable('type')}>Type</th>
-        //         <th onClick={() => sortTable('description')}>Description</th>
-        //     </tr>
-        //     </thead>
-        //     <tbody>
-           
-        
-        //     {registrations.map((reg, index) => (
-        //         <tr key={index}>
-        //             <td>{reg.owner.map(owner => owner.cecId).join(', ')}</td>
-        //             <td>{new Date(reg.created).toLocaleDateString()}</td>
-        //             <td>{new Date(reg.expires).toLocaleDateString()}</td>
-        //             <td>{reg.type}</td>
-        //             <td>{reg.description}</td>
-        //         </tr>
-        //     ))}
-        //     </tbody>
-        // </table>
     );
 };
 

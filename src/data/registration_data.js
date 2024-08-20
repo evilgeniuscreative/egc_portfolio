@@ -346,3 +346,5 @@ const REG_DATA = [
     }
 
   ]
+
+  export default REG_DATA;

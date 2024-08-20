@@ -482,7 +482,7 @@ const INFO = {
 		{
 			title: "Cisco OAuth Registry",
 			type: "both",
-			thumb: "images/thumb-cisco.png",
+			thumb: "images/thumb-coar.png",
 			description:
 				"Working mockup for Cisco OAuth Registry built in Angular 1.x in Typescript in preparation for Angular 2, along with multiple other in-house apps and designs.",
 			logos: [

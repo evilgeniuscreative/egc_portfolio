@@ -35,7 +35,7 @@ function App() {
 				<Route path="/article/:slug" element={<ReadArticle />} />
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/animation" element={<Animation />} />
-				<Route path="/allregistrations" element={<AllRegistrations />} />
+				<Route path="/coar" element={<AllRegistrations />} />
 				<Route path="*" element={<Notfound />} />
 			</Routes>
 		</div>

@@ -35,8 +35,12 @@ const AllRegistrations = () => {
 						</div>
 					</div>
 					<div className="coar-container">
-               <RegistrationTable
-							{...REG_DATA} />
+					
+							<RegistrationTable
+								data={REG_DATA}
+							/>
+						
+          
           </div>
           <div className="page-footer">
 						<Footer />
