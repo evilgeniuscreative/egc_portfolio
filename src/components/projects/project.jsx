@@ -29,10 +29,11 @@ const Project = (props) => {
 	console.log("softwareLogos", softwareLogos);
 
 	const theLogos = softwareLogos.map((logo) => {
+		const rndNum = Math.floor(Math.random() * 10000);
 		return (
 			<span
 				className="project-logo"
-				key="{logo.id}"
+				key={`${rndNum}${logo.id}`}
 				title={logo.software}
 			>
 				<img src={logo.img} alt={logo.software} />

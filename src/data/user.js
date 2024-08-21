@@ -216,7 +216,7 @@ const INFO = {
 					img: "images/icon-id.png",
 				},
 			],
-			link: "showImage/awhere-future-of-farming.jpg",
+			link: "http://evilgeniuscreative.com/portfolio/pimages/farming.jpg",
 		},
 		{
 			title: "Brunswick Boating Companies Communities",
@@ -455,7 +455,7 @@ const INFO = {
 				},
 			],
 
-			link: "showImages/ESP.jpg",
+			link: "http://evilgeniuscreative.com/portfolio/pimages/ESP.jpg",
 		},
 		{
 			title: "Xactly corp Community customizations",
@@ -514,7 +514,7 @@ const INFO = {
 				{ id: "52", software: "HTML5", img: "images/html5.png" },
 			],
 			linkText: "Company no longer exists; LinkedIn page",
-			link: "showImages/ahwere-weather-app.jpg",
+			link: "http://evilgeniuscreative.com/portfolio/pimages/weatherapp.jpg",
 		},
 		{
 			title: "JMP.com AEM site work",
@@ -568,7 +568,7 @@ const INFO = {
 				},
 			],
 
-			link: "images/cbc.jpg",
+			link: "http://evilgeniuscreative.com/portfolio/pimages/cbc.jpg",
 		},
 		{
 			title: "Danser Guitar Works",
@@ -591,7 +591,7 @@ const INFO = {
 				{ id: "295", software: "PHP", img: "images/php.png" },
 			],
 
-			link: "images/danser.jpg",
+			link: "http://evilgeniuscreative.com/portfolio/pimages/danser.jpg",
 		},
 		{
 			title: "Los Olivos",
@@ -604,7 +604,7 @@ const INFO = {
 				{ id: "95", software: "PHP", img: "images/php.png" },
 			],
 
-			link: "images/los-olivos.jpg",
+			link: "http://evilgeniuscreative.com/portfolio/pimages/los-olivos.jpg",
 		},
 	],
 	animation: [
@@ -613,47 +613,47 @@ const INFO = {
 			thumb: "images/thumb-percentiles.png",
 			description:
 				"What Percintiles are and how they relate to Agile Metrics",
-			link: "animation_files/PERCENTILES/percentiles.html",
+			link: "https://evilgeniuscreative.com/portfolio/PERCENTILES/percentiles.html",
 		},
 		{
 			title: "Polar Charts",
 			thumb: "images/thumb-polar.png",
 			description:
 				"What are polar charts and how can we use them in Agile Metrics?",
-			link: "animation_files/POLAR/polar.html",
+			link: "https://evilgeniuscreative.com/portfolio/POLAR/polar.html",
 		},
 		{
 			title: "Predictability",
 			thumb: "images/thumb-predictability.png",
 			description: "What part does Predictability have in Agile Metrics",
-			link: "animation_files/PREDICTABILITY/predictability.html",
+			link: "https://evilgeniuscreative.com/portfolio/PREDICTABILITY/predictability.html",
 		},
 		{
 			title: "Productivity",
 			thumb: "images/thumb-productivity.png",
 			description: "How do we best track Productivity in Agile Metrics?",
-			link: "animation_files/PRODUCTIVITY/productivity.html",
+			link: "https://evilgeniuscreative.com/portfolio/PRODUCTIVITY/productivity.html",
 		},
 		{
 			title: "Quality",
 			thumb: "images/thumb-quality.png",
 			description:
 				"What does Quality mean and how do we understand it in the context of Agile Metrics",
-			link: "animation_files/QUALITY/quality.html",
+			link: "https://evilgeniuscreative.com/portfolio/QUALITY/quality.html",
 		},
 		{
 			title: "RESPONSIVENESS",
 			thumb: "images/thumb-responsiveness.png",
 			description:
 				"What is Responsiveness in Agile Metrics, what does it mean, and why we should track it.",
-			link: "animation_files/RESPONSIVENESS/responsiveness.html",
+			link: "https://evilgeniuscreative.com/portfolio/RESPONSIVENESS/responsiveness.html",
 		},
 		{
 			title: "OVERALL",
 			thumb: "images/thumb-overall.png",
 			description:
 				"Taking all the metrics above and displaying them as a group to get a bigger overview of how the team is doing.",
-			link: "animation_files/OVERALL/overall.html",
+			link: "https://evilgeniuscreative.com/portfolio/OVERALL/overall.html",
 		},
 	],
 };
