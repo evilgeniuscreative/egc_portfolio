@@ -495,14 +495,14 @@ const INFO = {
 				{ id: "55", software: "Less", img: "images/less.png" },
 			],
 			linkText: "View Project",
-			link: "coarpage",
+			link: "https://evilgeniuscreative.com/portfolio/COAR/index.php",
 		},
 		{
 			title: "aWhere: Created weather app and living Style Guide",
 			type: "both",
-			thumb: "images/thumb-awhere.png",
+			thumb: "images/thumb-awhere-weather-app.jpg",
 			description:
-				"Created both a weather app from Angularjs and D3.js to provide farmers in developing countries with accurate weather reports. Also created a living style guide for the company from Angularjs. No longer in business. Linked in only.",
+				"Created both a weather app from Angularjs and D3.js to provide farmers in developing countries with accurate weather reports. Also created a living style guide for the company from Angularjs. No longer in business. Weather app image only.",
 			logos: [
 				{ id: "18", software: "AngularJS", img: "images/angular.png" },
 				{ id: "54", software: "D3js", img: "images/d3.png" },
@@ -510,7 +510,7 @@ const INFO = {
 				{ id: "52", software: "HTML5", img: "images/html5.png" },
 			],
 			linkText: "Company no longer exists; LinkedIn page",
-			link: "https://www.linkedin.com/company/awhere-inc-/",
+			link: "showImages/ahwere-weather-app.jpg",
 		},
 		{
 			title: "JMP.com AEM site work",
