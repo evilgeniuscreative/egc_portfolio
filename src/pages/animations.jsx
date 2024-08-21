@@ -15,7 +15,7 @@ const Animations = () => {
 	return (
 		<React.Fragment>
 			<Helmet>
-				<title>{`Articles | ${INFO.main.title}`}</title>
+				<title>{`Animations | ${INFO.animations.title}`}</title>
 				<meta name="description" content={currentSEO.description} />
 				<meta
 					name="keywords"
@@ -32,8 +32,22 @@ const Animations = () => {
 					</div>
 
 					<div className="animation-container">
-						<div className="animation-main">
-							<Animation />
+						<div className="title animation-title">
+							{INFO.animations.title}
+						</div>
+						<div className="description animations-description">
+							{INFO.animations.description}
+						</div>
+						<div className="animation-items-container">
+							{INFO.animation.map((animation, index) => (
+								<Animation
+									key={index}
+									title={animation.title}
+									description={animation.description}
+									link={animation.link}
+									thumb={animation.thumb}
+								/>
+							))}
 						</div>
 					</div>
 					<div className="page-footer">

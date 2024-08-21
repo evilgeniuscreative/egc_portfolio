@@ -11,4 +11,10 @@
 	--primary-font: "Heebo", sans-serif;
 	--secondary-font: "Roboto", sans-serif;
 	/* --------------------- */
+
+	/* ------- general ------- */
+	--border-color: var(--tertiary-color);
+	--radius: 3px; 
+	--radius-large: 5px;
 }
+

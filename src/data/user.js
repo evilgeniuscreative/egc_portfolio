@@ -33,6 +33,10 @@ const INFO = {
 		description: "Coming soon .",
 	},
 
+	animations: {
+		title: "Animations for Rally Software explaining Agile Metrics",
+		description: "A series of animations explaining agile metrics for rally software, to give an idea of how each major agile metric is explaining measured and relates to team performance.",
+	},
 	projects: [
 		{
 			title: "Vue vs Google Maps using NCDOT data",
@@ -606,40 +610,47 @@ const INFO = {
 	animation: [
 		{
 			title: "Percentiles",
+			thumb: "images/thumb-percentiles.png",
 			description:
 				"What Percintiles are and how they relate to Agile Metrics",
 			link: "animation_files/PERCENTILES/percentiles.html",
 		},
 		{
 			title: "Polar Charts",
+			thumb: "images/thumb-polar.png",
 			description:
 				"What are polar charts and how can we use them in Agile Metrics?",
 			link: "animation_files/POLAR/polar.html",
 		},
 		{
 			title: "Predictability",
+			thumb: "images/thumb-predictability.png",
 			description: "What part does Predictability have in Agile Metrics",
 			link: "animation_files/PREDICTABILITY/predictability.html",
 		},
 		{
 			title: "Productivity",
+			thumb: "images/thumb-productivity.png",
 			description: "How do we best track Productivity in Agile Metrics?",
 			link: "animation_files/PRODUCTIVITY/productivity.html",
 		},
 		{
 			title: "Quality",
+			thumb: "images/thumb-quality.png",
 			description:
 				"What does Quality mean and how do we understand it in the context of Agile Metrics",
 			link: "animation_files/QUALITY/quality.html",
 		},
 		{
 			title: "RESPONSIVENESS",
+			thumb: "images/thumb-responsiveness.png",
 			description:
 				"What is Responsiveness in Agile Metrics, what does it mean, and why we should track it.",
 			link: "animation_files/RESPONSIVENESS/responsiveness.html",
 		},
 		{
 			title: "OVERALL",
+			thumb: "images/thumb-overall.png",
 			description:
 				"Taking all the metrics above and displaying them as a group to get a bigger overview of how the team is doing.",
 			link: "animation_files/OVERALL/overall.html",
