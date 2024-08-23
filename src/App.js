@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useParams } from "react-router-dom";
 import ReactGA from "react-ga4";
 
 import Homepage from "./pages/homepage";
@@ -13,6 +13,7 @@ import Animation from "./pages/animations";
 import Designs from "./pages/designs";
 import Notfound from "./pages/404";
 import AllRegistrations from "./pages/allregistrations";
+import ShowImage from "./pages/showImage";
 
 import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
@@ -24,6 +25,7 @@ function App() {
 		}
 	}, []);
 
+	const { id } = useParams();
 	return (
 		<div className="App">
 			<Routes>
@@ -36,6 +38,7 @@ function App() {
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/animation" element={<Animation />} />
 				<Route path="/coar" element={<AllRegistrations />} />
+				<Route path="/showimage/:id" element={<ShowImage props={id} />} />"
 				<Route path="*" element={<Notfound />} />
 			</Routes>
 		</div>

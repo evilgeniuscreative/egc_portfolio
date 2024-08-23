@@ -83,6 +83,19 @@ const SEO = [
 		],
 	},
 	{
+		page: "images",
+		description:
+			"Image of a project I worked on that is either a poster or a website that no longer exists",
+		keywords: [
+			"design",
+			"development",
+			"graphic design",
+			"UX",
+			"UI",
+			"Designer"
+		],
+	},
+	{
 		page:"coaroauth",
 		description:"Cisco OAuth Registration",
 		keywords:[

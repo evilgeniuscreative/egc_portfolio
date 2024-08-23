@@ -1,8 +1,6 @@
 const missing =
 	"This site no longer exists, but here's a screenshot of the original design.";
-const printed =
-	"This is a graphic design project, only so there is no site to go along with it.";
-const INFO = {
+let INFO = {
 	main: {
 		title: "Ian Kleinfeld, Software Developer, Front End Engineer, with a deep UX, UI, and Design background",
 		name: "Ian Kleinfeld",
@@ -37,13 +35,54 @@ const INFO = {
 		title: "Animations for Rally Software explaining Agile Metrics",
 		description: "A series of animations explaining agile metrics for rally software, to give an idea of how each major agile metric is explaining measured and relates to team performance.",
 	},
+	images:{
+		title: "Project Image",
+		description: "Image of a project I worked on that is either a poster or a website that no longer exists",
+
+	},
 	projects: [
 		{
+	id: "TURBOTAX",
+			title: "Intuit Turbotax Out-of-Product-Help Community",
+			type: "both",
+			thumb: "images/thumb-intuit.png",
+			description:
+				"Enhancing the Intuit Khoros Community, integrating  with various other Intuit apps: React library, data pulled with GraphQL,  A/B/C/D live user testing, Splunk queries &amp; user dashboards, and more.",	
+				logos: [
+				{
+					id: "449",
+					software: "Khoros Community",
+					img: "images/khoros.png",
+				},
+				{
+					id: "995",
+					software: "React",
+					img: "images/react.png",
+				},
+				{
+					id: "7654",
+					software: "Splunk",
+					img: "images/splunk.png",
+				},
+				{
+					id: "891",
+					software: "Freemarker",
+					img: "images/freemarker.png",
+				},
+				{ id: "882", software: "jQuery", img: "images/jquery.png" },
+				{ id: "875", software: "JSON", img: "images/json.png" },
+				{ id: "865", software: "SCSS", img: "images/sass.png" },
+			],
+			linkText: "View Project",
+			link: "https://ttlc.intuit.com/community/lower-your-debt/discussion/how-or-what-can-i-do-to-lower-my-debts/00/1882396",	
+				},
+		{
+			id: "NCDOT",
 			title: "Vue vs Google Maps using NCDOT data",
 			type: "both",
 			thumb: "images/thumb-ncdot.png",
 			description:
-				"Pulling data from the North Carolina Department of transportation open APIs, Users can discover the traffic and construction incidents around the state.",
+				"Play project pulling data from the North Carolina Department of transportation open APIs, Users can discover the traffic and construction incidents around the state.",
 			logos: [
 				{ id: "0", software: "Vue", img: "images/vuejs.png" },
 				{ id: "99", software: "HTML", img: "images/html5.png" },
@@ -54,6 +93,7 @@ const INFO = {
 		},
 
 		{
+			id: "FIDELITY",
 			title: "Fidelity Net Benefits Homepage",
 			type: "both",
 			thumb: "images/thumb-fidelity.png",
@@ -72,6 +112,7 @@ const INFO = {
 			link: "https://evilgeniuscreative.com/Fidelity/",
 		},
 		{
+			id: "AGILE",
 			title: "Agile Metrics Explanation Animations",
 			type: "both",
 			thumb: "images/thumb-animation.png",
@@ -88,12 +129,12 @@ const INFO = {
 			link: "/animation",
 		},
 		{
+			id: "BDIT",
 			title: "Best Diners in Town: Atlanta",
 			type: "print",
 			thumb: "images/thumb-bdit.jpg",
 			description:
-				printed +
-				" A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+				"A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
 			logos: [
 				{
 					id: 96813,
@@ -104,13 +145,13 @@ const INFO = {
 			link: "http://evilgeniuscreative.com/portfolio/pdf/bdit.php",
 		},
 		{
+			id: "COFFEE",
 			title: "Coffee Price Report",
 			type: "print",
 			thumb: "images/thumb-coffee-report.png",
 			file: "images/print/coffee-report.jpg",
 			description:
-				printed +
-				" A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+				"A graphic design project for a Coffee Futures report. Designed entire report format.	",
 			logos: [
 				{
 					id: 93813,
@@ -121,6 +162,7 @@ const INFO = {
 			link: "http://evilgeniuscreative.com/portfolio/pdf/coffee.php",
 		},
 		{
+			id: "JMP",
 			title: "JMP User Community",
 			type: "both",
 			thumb: "images/thumb-jmpcom.png",
@@ -157,6 +199,7 @@ const INFO = {
 		},
 
 		{
+			id: "EA",
 			title: "EA Answers Community Mega Menu",
 			type: "dev",
 			thumb: "images/thumb-ea.png",
@@ -181,6 +224,7 @@ const INFO = {
 			link: "https://answers.ea.com/t5/Answer-HQ-English/ct-p/AHQ-English",
 		},
 		{
+			id: "ROKU",
 			title: "Roku Community Homepage Tiles",
 			type: "devui",
 			thumb: "images/thumb-roku.png",
@@ -203,12 +247,12 @@ const INFO = {
 			link: "https://community.roku.com",
 		},
 		{
+			id: "FARMING",
 			title: "The Future of Farming Poster",
 			type: "print",
 			thumb: "images/thumb-awhere-future-of-farming.jpg",
 			description:
-				printed +
-				" A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+				"This is a poster graphic design for defunct company aWhere, which was a weather reporting company for third-world farmers. This poster was for a conference in Nairobi on Farming Tech. (2015).",
 			logos: [
 				{
 					id: 96813,
@@ -216,9 +260,11 @@ const INFO = {
 					img: "images/icon-id.png",
 				},
 			],
-			link: "http://evilgeniuscreative.com/portfolio/pimages/farming.jpg",
+			image: "farming.jpg",
+			link: "showimage/FARMING",
 		},
 		{
+			id: "BRUNSWICK",
 			title: "Brunswick Boating Companies Communities",
 			type: "devui",
 			thumb: "images/thumb-brunswick.png",
@@ -242,6 +288,7 @@ const INFO = {
 		},
 
 		{
+			id: "MACMILLAN",
 			title: "Macmillan Communities redesign and sliding menus",
 			type: "devui",
 			thumb: "images/thumb-mcmillan.png",
@@ -265,6 +312,7 @@ const INFO = {
 			link: "https://community.macmillanlearning.com/t5/macmillan-community/ct-p/college",
 		},
 		{
+			id: "SEPHORA",
 			title: "Sephora Community custom email formatting",
 			thumb: "images/thumb-sephora.png",
 			type: "devui",
@@ -288,6 +336,7 @@ const INFO = {
 			link: "https://community.sephora.com",
 		},
 		{
+			id: "VERIZON",
 			title: "Verizon Community custom menu",
 			thumb: "images/thumb-verizon.png",
 			description:
@@ -309,6 +358,7 @@ const INFO = {
 			link: "https://community.verizon.com",
 		},
 		{
+			id: "SPLUNK",
 			title: "Splunk Community profile preferences customization",
 			type: "dev",
 			thumb: "images/thumb-splunk.png",
@@ -331,6 +381,7 @@ const INFO = {
 			link: "https://community.splunk.com",
 		},
 		{
+			id: "INVOCA",
 			title: "Invoca customized sign in process",
 			type: "dev",
 			thumb: "images/thumb-invoca.png",
@@ -357,6 +408,7 @@ const INFO = {
 			link: "https://community.invoca.com",
 		},
 		{
+			id: "ZOOM",
 			title: "Zoom homepage tiles display",
 			type: "devui",
 			thumb: "images/thumb-zoom.png",
@@ -385,6 +437,7 @@ const INFO = {
 			link: "https://community.zoom.com",
 		},
 		{
+			id: "SISENSE",
 			title: "Khoros Community Salesforce integration",
 			type: "dev",
 			thumb: "images/thumb-sisense.png",
@@ -412,6 +465,7 @@ const INFO = {
 			link: "https://community.sisense.com",
 		},
 		{
+			id: "JAMF",
 			title: "JAMF Community constulting and tutorials",
 			type: "both",
 			thumb: "images/thumb-jamf.png",
@@ -435,13 +489,14 @@ const INFO = {
 			link: "https://community.jamf.com",
 		},
 		{
+			id: "ESP",
 			title: "ESP Nutrition e-Commerce Site",
 			type: "both",
 			thumb: "images/thumb-ESP.png",
-			image: "images/ESP.jpg",
+
 			msg: missing,
 			description:
-				"Nutritional supplement e-commerce site built in WordPress and Shopped plug-in. Image only",
+				"Nutritional supplement e-commerce site built in WordPress and Shopped plug-in. (2011).",
 			logos: [
 				{
 					id: "15",
@@ -454,10 +509,11 @@ const INFO = {
 					img: "images/php.png",
 				},
 			],
-
-			link: "http://evilgeniuscreative.com/portfolio/pimages/ESP.jpg",
+			image: "ESP.jpg",
+			link: "showimage/ESP",
 		},
 		{
+			id: "XACTLY",
 			title: "Xactly corp Community customizations",
 			type: "dev",
 			thumb: "images/thumb-xactly.png",
@@ -484,6 +540,7 @@ const INFO = {
 			link: "https://community.xactlycorp.com",
 		},
 		{
+			id: "COAR",
 			title: "Cisco OAuth Registry",
 			type: "both",
 			thumb: "images/thumb-coar.png",
@@ -502,11 +559,12 @@ const INFO = {
 			link: "https://evilgeniuscreative.com/portfolio/COAR/index.php",
 		},
 		{
+			id: "WEATHERAPP",
 			title: "aWhere: Created weather app and living Style Guide",
 			type: "both",
 			thumb: "images/thumb-awhere-weather-app.jpg",
 			description:
-				"Created both a weather app from Angularjs and D3.js to provide farmers in developing countries with accurate weather reports. Also created a living style guide for the company from Angularjs. No longer in business. Weather app image only.",
+				"Created both a weather app from Angularjs and D3.js to provide farmers in developing countries with accurate weather reports. Also created a living style guide for the company from Angularjs. No longer in business. Weather app image only. (2015)",
 			logos: [
 				{ id: "18", software: "AngularJS", img: "images/angular.png" },
 				{ id: "54", software: "D3js", img: "images/d3.png" },
@@ -514,9 +572,11 @@ const INFO = {
 				{ id: "52", software: "HTML5", img: "images/html5.png" },
 			],
 			linkText: "Company no longer exists; LinkedIn page",
-			link: "http://evilgeniuscreative.com/portfolio/pimages/weatherapp.jpg",
+			image: "weatherapp.jpg",
+			link: "showimage/WEATHERAPP",
 		},
 		{
+			id: "JMPCOM",
 			title: "JMP.com AEM site work",
 			type: "both",
 			thumb: "images/thumb-jmp.png",
@@ -535,6 +595,7 @@ const INFO = {
 			link: "https://jmp.com",
 		},
 		{
+			id: "JDS",
 			title: "AEM Discovery Summit site",
 			type: "both",
 			thumb: "images/thumb-jds.png",
@@ -553,11 +614,12 @@ const INFO = {
 			link: "https://discoverysummit.jmp",
 		},
 		{
+			id: "CBC",
 			title: "Capital Broadcasting Company",
 			type: "both",
 			thumb: "images/thumb-cbc.png",
 			description:
-				"CBC needed to renew their site and this was the top design at the time. Image only due to many changes on the site.",
+				"CBC needed to renew their site and this was the top design at the time. Image only due to many changes on the site. (2014)",
 			logos: [
 				{ id: "219", software: "HTML", img: "images/html5.png" },
 				{ id: "141", software: "SASS", img: "images/sass.png" },
@@ -567,15 +629,16 @@ const INFO = {
 					img: "images/javascript.png",
 				},
 			],
-
-			link: "http://evilgeniuscreative.com/portfolio/pimages/cbc.jpg",
+			image: "cbc.jpg",
+			link: "showimage/CBC",
 		},
 		{
+			id: "DANSER",
 			title: "Danser Guitar Works",
 			type: "both",
 			thumb: "images/thumb-danser.png",
 			description:
-				"Guitar shaped site for a custom luthier and builder. Image only.",
+				"Screenshot of a guitar-shaped customized theme and plugins Wordpress site for a custom luthier and builder. Site is no longer this design. (2014).",
 			logos: [
 				{
 					id: "210",
@@ -590,21 +653,22 @@ const INFO = {
 				},
 				{ id: "295", software: "PHP", img: "images/php.png" },
 			],
-
-			link: "http://evilgeniuscreative.com/portfolio/pimages/danser.jpg",
+			image: "danser.jpg",
+			link: "showimage/DANSER",
 		},
 		{
+			id: "LOSOLIVOS",
 			title: "Los Olivos",
 			type: "both",
 			thumb: "images/thumb-los-olivos.png",
 			description:
-				"Former raw foods online shopping site based on a WordPress Shopp plug-in. Image only.",
+				"Former raw foods online shopping site based on a WordPress Shopp plug-in. Image only. (2013).",
 			logos: [
 				{ id: "2", software: "Wordpress", img: "images/wordpress.png" },
 				{ id: "95", software: "PHP", img: "images/php.png" },
 			],
-
-			link: "http://evilgeniuscreative.com/portfolio/pimages/los-olivos.jpg",
+			image: "los-olivos.jpg",
+			link: "showimage/LOSOLIVOS",
 		},
 	],
 	animation: [

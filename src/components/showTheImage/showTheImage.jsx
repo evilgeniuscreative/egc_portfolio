@@ -1,11 +1,11 @@
 import React from "react";
+import "./style/style.css";
 
 const showTheImage = (props) => {
-	const { id } = props;
+	const { project } = props;
 	return (
-		<div>
-			<div>ShowImage</div>
-			<img src={`images/${id}.jpg`} alt={`Image ${id}`} />
+		<div className="image-container">
+			<img src={`../images/${project.image}`} alt={`${project.title}`} />
 		</div>
 	);
 };

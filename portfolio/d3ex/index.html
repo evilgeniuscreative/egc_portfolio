@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Pie Chart</title>
+		<script src="https://d3js.org/d3.v6.min.js"></script>
+	</head>
+	<body>
+		<div id="pie-chart"></div>
+		<script>
+			const pieData = [
+				{ name: "Rent", value: 22500 },
+				{ name: "Wages", value: 292214 },
+				{ name: "Utilities", value: 4502 },
+				{ name: "Supplies", value: 8234 },
+				{ name: "Misc", value: 2992 },
+			];
+
+			const width = 350;
+			const height = Math.min(width, 350);
+			const radius = Math.min(width, height) / 2;
+
+			const arc = d3
+				.arc()
+				.innerRadius(radius * 0.67)
+				.outerRadius(radius - 1);
+
+			const pie = d3
+				.pie()
+				.padAngle(1 / radius)
+				.sort(null)
+				.value((d) => d.value);
+
+			let color = d3
+				.scaleOrdinal()
+				.domain(pieData.map((d) => d.name))
+				.range(
+					d3
+						.quantize(
+							(t) => d3.interpolateSpectral(t * 0.8 + 0.1),
+							pieData.length
+						)
+						.reverse()
+				);
+
+			const svg = d3
+				.select("#pie-chart")
+				.append("svg")
+				.attr("width", width)
+				.attr("height", height)
+				.attr("viewBox", [-width / 2, -height / 2, width, height])
+				.attr("style", "max-width: 100%; height: auto;");
+
+			const g = svg.append("g");
+
+			function updateChart(data) {
+				const arcs = pie(data);
+
+				const path = g.selectAll("path").data(arcs);
+
+				const color = d3.scaleOrdinal(d3.schemeCategory10);
+
+				path.join("path")
+					.attr("fill", (d) => color(d.index))
+					.attr("d", arc)
+					.append("title")
+					.text(
+						(d) =>
+							`${d.data.name}: ${d.data.value.toLocaleString()}`
+					);
+
+				const text = g.selectAll("text").data(arcs);
+
+				text.join("text")
+					.attr("transform", (d) => `translate(${arc.centroid(d)})`)
+					.call((text) =>
+						text
+							.append("tspan")
+							.attr("y", "-0.4em")
+							.attr("font-weight", "bold")
+							.text((d) => d.data.name)
+					)
+					.call((text) =>
+						text
+							.filter((d) => d.endAngle - d.startAngle > 0.25)
+							.append("tspan")
+							.attr("x", 0)
+							.attr("y", "0.7em")
+							.attr("fill-opacity", 0.7)
+							.text((d) => d.data.value.toLocaleString("en-US"))
+					);
+			}
+
+			function generateRandomData() {
+				return pieData.map((d) => ({
+					value: Math.floor(Math.random() * 300000),
+				}));
+			}
+
+			updateChart(pieData);
+
+			setInterval(() => {
+				const newData = generateRandomData();
+				updateChart(newData);
+			}, 3000);
+		</script>
+	</body>
+</html>
