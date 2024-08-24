@@ -10,11 +10,11 @@
 		<div id="pie-chart"></div>
 		<script>
 			const pieData = [
-				{ name: "Rent", value: 22500 },
-				{ name: "Wages", value: 292214 },
-				{ name: "Utilities", value: 4502 },
-				{ name: "Supplies", value: 8234 },
-				{ name: "Misc", value: 2992 },
+				{ name: "Rent", value: 72500 },
+				{ name: "Wages", value: 92214 },
+				{ name: "Utilities", value: 64502 },
+				{ name: "Supplies", value: 58234 },
+				{ name: "Misc", value: 62992 },
 			];
 
 			const width = 350;
@@ -55,47 +55,129 @@
 			const g = svg.append("g");
 
 			function updateChart(data) {
+				// Log the data to inspect its structure
+				console.log("Data being passed to updateChart:", data);
+
+				// Ensure the data is not empty
+				if (!data || data.length === 0) {
+					console.error("Data array is empty or undefined");
+					return;
+				}
+
 				const arcs = pie(data);
 
 				const path = g.selectAll("path").data(arcs);
 
 				const color = d3.scaleOrdinal(d3.schemeCategory10);
 
-				path.join("path")
-					.attr("fill", (d) => color(d.index))
-					.attr("d", arc)
-					.append("title")
-					.text(
-						(d) =>
-							`${d.data.name}: ${d.data.value.toLocaleString()}`
-					);
+				path.join(
+					(enter) => {
+						enter
+							.append("path")
+							.attr("fill", (d) => color(d.index))
+							.each(function (d) {
+								this._current = d;
+							}) // Store the initial angles
+							.attr("d", arc);
+						// .append("title")
+						// .text(
+						// 	(d) =>
+						// 		`${
+						// 			d.data.name
+						// 		}: ${d.data.value.toLocaleString()}`
+						// );
+					},
+
+					(update) => {
+						update
+							.transition() // Add transition here
+							.duration(750) // Set duration of the transition
+							.attrTween("d", function (d) {
+								const i = d3.interpolate(this._current, d);
+								this._current = i(0);
+								return (t) => arc(i(t));
+							});
+					},
+
+					(exit) => exit.remove() // Remove old elements
+				);
 
 				const text = g.selectAll("text").data(arcs);
 
-				text.join("text")
-					.attr("transform", (d) => `translate(${arc.centroid(d)})`)
-					.call((text) =>
-						text
-							.append("tspan")
-							.attr("y", "-0.4em")
-							.attr("font-weight", "bold")
-							.text((d) => d.data.name)
-					)
-					.call((text) =>
-						text
-							.filter((d) => d.endAngle - d.startAngle > 0.25)
-							.append("tspan")
-							.attr("x", 0)
-							.attr("y", "0.7em")
-							.attr("fill-opacity", 0.7)
-							.text((d) => d.data.value.toLocaleString("en-US"))
-					);
+				text.join(
+					(enter) => {
+						enter
+							.append("text")
+							.attr(
+								"transform",
+								(d) => `translate(${arc.centroid(d)})`
+							)
+							.call((text) => {
+								text.append("tspan")
+									.attr("y", "-0.4em")
+									.attr("font-weight", "bold")
+									.text((d) => `${d.data.name}`);
+							})
+							.call((text) => {
+								text.filter(
+									(d) => d.endAngle - d.startAngle > 0.25
+								)
+									.append("tspan")
+									.attr("x", 0)
+									.attr("y", "0.7em")
+									.attr("fill-opacity", 0.7)
+									.text(
+										(d) =>
+											`$${d.data.value.toLocaleString()}`
+									);
+							});
+					},
+
+					(update) => {
+						update.selectAll("tspan").remove();
+
+						update
+							.attr(
+								"transform",
+								(d) => `translate(${arc.centroid(d)})`
+							)
+							.call((text) => {
+								console.log("data 150", data);
+								text.append("tspan")
+									.attr("y", "-0.4em")
+									.attr("font-weight", "bold")
+									.text((d) => `${d.data.name}`);
+							})
+							.call((text) => {
+								console.log("data 157", data);
+
+								text.append("tspan")
+									.attr("font-weight", "normal")
+									.attr("x", 0)
+									.attr("y", "0.7em")
+									.text(
+										(d) =>
+											`$${d.data.value.toLocaleString()}`
+									);
+							});
+					},
+
+					(exit) => exit.remove() // Remove old elements
+				);
 			}
 
 			function generateRandomData() {
-				return pieData.map((d) => ({
-					value: Math.floor(Math.random() * 300000),
-				}));
+				console.log(
+					"Pie Data being passed to generateRandomData:",
+					pieData
+				);
+				return pieData.map((d) => {
+					console.log("Data being processed:", d);
+					return {
+						name: d.name,
+						value: Math.floor(Math.random() * 300000),
+					};
+				});
 			}
 
 			updateChart(pieData);
@@ -103,7 +185,7 @@
 			setInterval(() => {
 				const newData = generateRandomData();
 				updateChart(newData);
-			}, 3000);
+			}, 5000);
 		</script>
 	</body>
 </html>
