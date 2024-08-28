@@ -5,19 +5,81 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>D3 Chart Examples</title>
 		<script src="https://d3js.org/d3.v6.min.js"></script>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+			}
+			.dashboard {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			fieldset {
+				border: 1px solid #333;
+				padding: 10px;
+				margin: 10px;
+			}
+			#pie-chart {
+				flex-grow: 1;
+			}
+			#bar-chart {
+				display: flex;
+				flex-direction: row-reverse;
+				flex-grow: 51;
+				align-items: center;
+				justify-content: start;
+				gap: 20px;
+				padding: 40px;
+				margin-top: -130px;
+			}
+			.x-axis {
+				fill: black;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="pie-chart"></div>
-		<div id="bar-chart">
-			<form>
-				<label for="order">Order</label>
-				<select id="order">
-					<option value="0">Alphabetical</option>
-					<option value="1">Sales, ascending</option>
-					<option value="2">Sales, descending</option>
-				</select>
-			</form>
+		<h1>D3 Chart Examples</h1>
+		<div class="dashboard">
+			<div id="pie-chart"></div>
+			<div id="bar-chart">
+				<form>
+					<fieldset>
+						<legend>Sort Data By:</legend>
+
+						<div>
+							<input
+								type="radio"
+								name="sortorder"
+								id="alpha"
+								value="0"
+								checked
+							/>
+							<label for="alpha">Alphabetical (default)</label>
+						</div>
+
+						<div>
+							<input
+								type="radio"
+								name="sortorder"
+								id="salesAsc"
+								value="1"
+							/>
+							<label for="salesAsc">Sales, ascending</label>
+						</div>
+						<div>
+							<input
+								type="radio"
+								name="sortorder"
+								id="salesDesc"
+								value="2"
+							/>
+							<label for="salesDesc">Sales, descending</label>
+						</div>
+					</fieldset>
+				</form>
+			</div>
 		</div>
+
 		<script>
 			const pieData = [
 				{ name: "Rent", value: 72500 },
@@ -27,7 +89,7 @@
 				{ name: "Misc", value: 62992 },
 			];
 
-			const width = 350;
+			const width = 500;
 			const height = Math.min(width, 350);
 			const radius = Math.min(width, height) / 2;
 
@@ -195,14 +257,17 @@
 				{ company: "Sinking Subs", sales: 9298 },
 			];
 
+			let order = { value: "0" };
+
 			function createBarChart() {
-				const bwidth = 640;
-				const bheight = 400;
+				const bwidth = 550;
+				const bheight = 550;
 				const marginTop = 20;
 				const marginRight = 0;
-				const marginBottom = 30;
+				const marginBottom = 100;
 				const marginLeft = 40;
 
+				// default sort: alphabetical
 				barData = barData.sort((a, b) =>
 					d3.ascending(a.company, b.company)
 				);
@@ -229,12 +294,12 @@
 				const bsvg = d3
 					.create("svg")
 					.attr("viewBox", [0, 0, bwidth, bheight])
+					.attr("preserveAspectRatio", "xMaxYMin")
 					.attr(
 						"style",
 						`max-width: ${bwidth}px; height: auto; font: 10px sans-serif; overflow: visible;`
 					);
 
-				// Create a bar for each company.
 				const bar = bsvg
 					.append("g")
 					.attr("fill", "darkgreen")
@@ -252,10 +317,12 @@
 					.attr("transform", `translate(0,${bheight - marginBottom})`)
 					.call(xAxis)
 					.selectAll("text")
+					.attr("fill", "black")
+					.attr("class", "x-axis")
 					.attr("transform", "rotate(-90)")
 					.style("text-anchor", "end")
-					.attr("dx", "-0.8em")
-					.attr("dy", "-0.15em");
+					.attr("dx", "-1.5em")
+					.attr("dy", "-0.5em");
 
 				const gy = bsvg
 					.append("g")
@@ -286,19 +353,11 @@
 
 			// Now you can call createBarChart() to create the chart and get the update function.
 			const chart = createBarChart();
+
 			// Append the chart to a container in your HTML.
-			document.body.appendChild(chart);
+			document.getElementById("bar-chart").appendChild(chart);
 
-			// update the chart with the selected order
-
-			let input = document.getElementById("order");
-
-			input.addEventListener("change", function () {
-				console.log("input.value", input.value);
-				update(this.value); // dropdown value
-			});
-
-			function orderFn() {
+			function orderFn(order) {
 				switch (order.value) {
 					case "0":
 						return (a, b) => d3.ascending(a.company, b.company);
@@ -310,9 +369,32 @@
 			}
 
 			const update = () => {
-				barData.sort(orderFn(input.value));
+				barData.sort(orderFn(order));
 				chart.update(barData);
+				d3.selectAll("text").attr("fill", "black");
 			};
+
+			const alphabetical = document.getElementById("alpha");
+			const salesAsc = document.getElementById("salesAsc");
+			const salesDesc = document.getElementById("salesDesc");
+
+			alphabetical.addEventListener("change", function () {
+				order = { value: "0" };
+				update();
+				console.log("order.value", order.value);
+			});
+
+			salesAsc.addEventListener("change", function () {
+				order = { value: "1" };
+				update();
+				console.log("order.value", order.value);
+			});
+
+			salesDesc.addEventListener("change", function () {
+				order = { value: "2" };
+				update();
+				console.log("order.value", order.value);
+			});
 		</script>
 	</body>
 </html>
