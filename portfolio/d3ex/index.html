@@ -3,11 +3,21 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Pie Chart</title>
+		<title>D3 Chart Examples</title>
 		<script src="https://d3js.org/d3.v6.min.js"></script>
 	</head>
 	<body>
 		<div id="pie-chart"></div>
+		<div id="bar-chart">
+			<form>
+				<label for="order">Order</label>
+				<select id="order">
+					<option value="0">Alphabetical</option>
+					<option value="1">Sales, ascending</option>
+					<option value="2">Sales, descending</option>
+				</select>
+			</form>
+		</div>
 		<script>
 			const pieData = [
 				{ name: "Rent", value: 72500 },
@@ -46,6 +56,7 @@
 
 			const svg = d3
 				.select("#pie-chart")
+				.attr("style", "padding:40px;")
 				.append("svg")
 				.attr("width", width)
 				.attr("height", height)
@@ -55,10 +66,6 @@
 			const g = svg.append("g");
 
 			function updateChart(data) {
-				// Log the data to inspect its structure
-				console.log("Data being passed to updateChart:", data);
-
-				// Ensure the data is not empty
 				if (!data || data.length === 0) {
 					console.error("Data array is empty or undefined");
 					return;
@@ -77,21 +84,14 @@
 							.attr("fill", (d) => color(d.index))
 							.each(function (d) {
 								this._current = d;
-							}) // Store the initial angles
+							})
 							.attr("d", arc);
-						// .append("title")
-						// .text(
-						// 	(d) =>
-						// 		`${
-						// 			d.data.name
-						// 		}: ${d.data.value.toLocaleString()}`
-						// );
 					},
 
 					(update) => {
 						update
-							.transition() // Add transition here
-							.duration(750) // Set duration of the transition
+							.transition()
+							.duration(750)
 							.attrTween("d", function (d) {
 								const i = d3.interpolate(this._current, d);
 								this._current = i(0);
@@ -99,7 +99,7 @@
 							});
 					},
 
-					(exit) => exit.remove() // Remove old elements
+					(exit) => exit.remove()
 				);
 
 				const text = g.selectAll("text").data(arcs);
@@ -142,15 +142,12 @@
 								(d) => `translate(${arc.centroid(d)})`
 							)
 							.call((text) => {
-								console.log("data 150", data);
 								text.append("tspan")
 									.attr("y", "-0.4em")
 									.attr("font-weight", "bold")
 									.text((d) => `${d.data.name}`);
 							})
 							.call((text) => {
-								console.log("data 157", data);
-
 								text.append("tspan")
 									.attr("font-weight", "normal")
 									.attr("x", 0)
@@ -162,17 +159,12 @@
 							});
 					},
 
-					(exit) => exit.remove() // Remove old elements
+					(exit) => exit.remove()
 				);
 			}
 
 			function generateRandomData() {
-				console.log(
-					"Pie Data being passed to generateRandomData:",
-					pieData
-				);
 				return pieData.map((d) => {
-					console.log("Data being processed:", d);
 					return {
 						name: d.name,
 						value: Math.floor(Math.random() * 300000),
@@ -185,7 +177,142 @@
 			setInterval(() => {
 				const newData = generateRandomData();
 				updateChart(newData);
-			}, 5000);
+			}, 3000);
+
+			//--------------------------------------------------------------------------------//
+			// sortable bar chart
+
+			let barData = [
+				{ company: "Webco", sales: 10234 },
+				{ company: "WidgetMania", sales: 12983 },
+				{ company: "Bookstop", sales: 4876 },
+				{ company: "Chewme", sales: 22211 },
+				{ company: "Club Jedi", sales: 3209 },
+				{ company: "Orange Dev", sales: 6876 },
+				{ company: "Psychedelic Party Shop", sales: 4269 },
+				{ company: "Tin Mountain", sales: 17376 },
+				{ company: "Shibboleth Co.", sales: 11122 },
+				{ company: "Sinking Subs", sales: 9298 },
+			];
+
+			function createBarChart() {
+				const bwidth = 640;
+				const bheight = 400;
+				const marginTop = 20;
+				const marginRight = 0;
+				const marginBottom = 30;
+				const marginLeft = 40;
+
+				barData = barData.sort((a, b) =>
+					d3.ascending(a.company, b.company)
+				);
+
+				console.log("initial barData", barData);
+
+				// Declare the x (horizontal position) scale and the corresponding axis generator.
+				const x = d3
+					.scaleBand()
+					.domain(barData.map((d) => d.company))
+					.range([marginLeft, bwidth - marginRight])
+					.padding(0.1);
+
+				const xAxis = d3.axisBottom(x).tickSizeOuter(0);
+
+				// Declare the y (vertical position) scale.
+				const y = d3
+					.scaleLinear()
+					.domain([0, d3.max(barData, (d) => d.sales)])
+					.nice()
+					.range([bheight - marginBottom, marginTop]);
+
+				// Create the SVG container.
+				const bsvg = d3
+					.create("svg")
+					.attr("viewBox", [0, 0, bwidth, bheight])
+					.attr(
+						"style",
+						`max-width: ${bwidth}px; height: auto; font: 10px sans-serif; overflow: visible;`
+					);
+
+				// Create a bar for each company.
+				const bar = bsvg
+					.append("g")
+					.attr("fill", "darkgreen")
+					.selectAll("rect")
+					.data(barData)
+					.join("rect")
+					.style("mix-blend-mode", "multiply")
+					.attr("x", (d) => x(d.company))
+					.attr("y", (d) => y(d.sales))
+					.attr("height", (d) => y(0) - y(d.sales))
+					.attr("width", x.bandwidth());
+
+				const gx = bsvg
+					.append("g")
+					.attr("transform", `translate(0,${bheight - marginBottom})`)
+					.call(xAxis)
+					.selectAll("text")
+					.attr("transform", "rotate(-90)")
+					.style("text-anchor", "end")
+					.attr("dx", "-0.8em")
+					.attr("dy", "-0.15em");
+
+				const gy = bsvg
+					.append("g")
+					.attr("transform", `translate(${marginLeft},0)`)
+					.call(d3.axisLeft(y).ticks(5))
+					.call((g) => g.select(".domain").remove());
+
+				return Object.assign(bsvg.node(), {
+					update(order) {
+						console.log("order:", order.value, "barData", barData);
+						x.domain(barData.sort(orderFn).map((d) => d.company));
+
+						const t = bsvg.transition().duration(750);
+
+						bar.data(barData, (d) => d.company)
+							.order()
+							.transition(t)
+							.delay((d, i) => i * 20)
+							.attr("x", (d) => x(d.company));
+
+						gx.transition(t)
+							.call(xAxis)
+							.selectAll(".tick")
+							.delay((d, i) => i * 20);
+					},
+				});
+			}
+
+			// Now you can call createBarChart() to create the chart and get the update function.
+			const chart = createBarChart();
+			// Append the chart to a container in your HTML.
+			document.body.appendChild(chart);
+
+			// update the chart with the selected order
+
+			let input = document.getElementById("order");
+
+			input.addEventListener("change", function () {
+				console.log("input.value", input.value);
+				update(this.value); // dropdown value
+			});
+
+			function orderFn() {
+				switch (order.value) {
+					case "0":
+						return (a, b) => d3.ascending(a.company, b.company);
+					case "1":
+						return (a, b) => d3.ascending(a.sales, b.sales);
+					case "2":
+						return (a, b) => d3.descending(a.sales, b.sales);
+				}
+			}
+
+			const update = () => {
+				barData.sort(orderFn(input.value));
+				chart.update(barData);
+			};
 		</script>
 	</body>
 </html>
