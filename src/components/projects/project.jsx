@@ -15,6 +15,30 @@ const truncate = (str) => {
 	return str;
 };
 
+const handleMouseEnter = (e) => {
+	const target = e.currentTarget;
+	const fullDesc = target.querySelector(".full-description");
+	const desc = target.querySelector(".project-description");
+
+	if (desc && fullDesc) {
+		fullDesc.classList.remove("hideme");
+		fullDesc.classList.add("showme");
+		desc.classList.add("hideme");
+	}
+};
+
+const handleMouseLeave = (e) => {
+	const target = e.currentTarget;
+	const fullDesc = target.querySelector(".full-description");
+	const desc = target.querySelector(".project-description");
+
+	if (desc && fullDesc) {
+		desc.classList.remove("hideme");
+		fullDesc.classList.add("hideme");
+		fullDesc.classList.remove("showme");
+	}
+};
+
 const Project = (props) => {
 	const { softwareLogos, title, description, linkText, link, thumb, type } =
 		props;
@@ -54,8 +78,12 @@ const Project = (props) => {
 
 	return (
 		<React.Fragment>
-			<div className="project">
-				<Link to={link}>
+			<div
+				className="project"
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
+			>
+				<Link className="project-tile" to={link}>
 					<div className="project-container">
 						<div className="project-logo-wrap">{theLogos}</div>
 						<div className="project-title">
@@ -68,12 +96,21 @@ const Project = (props) => {
 								style={{ backgroundImage: `url(${thumb})` }}
 							></div>
 						</div>
-						<div
-							className="project-description"
-							dangerouslySetInnerHTML={{
-								__html: truncate(description),
-							}}
-						></div>
+						<div className="description-container">
+							<div
+								className="project-description"
+								dangerouslySetInnerHTML={{
+									__html: truncate(description),
+								}}
+							></div>
+							<div
+								className="full-description"
+								dangerouslySetInnerHTML={{
+									__html: description,
+								}}
+							></div>
+						</div>
+
 						<div className="project-link-section">
 							<div className="project-link-text">{linkText}</div>
 						</div>

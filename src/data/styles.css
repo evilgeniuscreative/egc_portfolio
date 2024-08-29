@@ -18,3 +18,38 @@
 	--radius: 3px;
 	--radius-large: 5px;
 }
+
+@keyframes fadeIn {
+	0% {
+		max-height: 145px;
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	100% {
+		max-height: 400px;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: 1;
+		max-height: 400px;
+	}
+	100% {
+		opacity: 0;
+		max-height: 145px;
+	}
+}
+
+.hideme {
+	position: absolute;
+	top: -0.95em;
+	animation: fadeOut 1s forwards ease-in-out;
+}
+
+.showme {
+	display: block !important;
+	animation: fadeIn 1s forwards ease-in-out;
+}

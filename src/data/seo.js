@@ -83,7 +83,7 @@ const SEO = [
 		],
 	},
 	{
-		page: "images",
+		page: "showimage",
 		description:
 			"Image of a project I worked on that is either a poster or a website that no longer exists",
 		keywords: [
@@ -92,21 +92,21 @@ const SEO = [
 			"graphic design",
 			"UX",
 			"UI",
-			"Designer"
+			"Designer",
 		],
 	},
 	{
-		page:"coaroauth",
-		description:"Cisco OAuth Registration",
-		keywords:[
+		page: "coaroauth",
+		description: "Cisco OAuth Registration",
+		keywords: [
 			"COAR",
 			"Cisco",
 			"OAuth",
 			"Registration",
 			"COAR Project",
-			"portfolio"
-		]	
-	}
+			"portfolio",
+		],
+	},
 ];
 
 export default SEO;

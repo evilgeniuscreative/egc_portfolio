@@ -13,7 +13,7 @@ import Animation from "./pages/animations";
 import Designs from "./pages/designs";
 import Notfound from "./pages/404";
 import AllRegistrations from "./pages/allregistrations";
-import ShowImage from "./pages/showImage";
+import ShowImage from "./pages/showimage";
 
 import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
@@ -38,7 +38,11 @@ function App() {
 				<Route path="/contact" element={<Contact />} />
 				<Route path="/animation" element={<Animation />} />
 				<Route path="/coar" element={<AllRegistrations />} />
-				<Route path="/showimage/:id" element={<ShowImage props={id} />} />"
+				<Route
+					path="/showimage/:id"
+					element={<ShowImage props={id} />}
+				/>
+				"
 				<Route path="*" element={<Notfound />} />
 			</Routes>
 		</div>
