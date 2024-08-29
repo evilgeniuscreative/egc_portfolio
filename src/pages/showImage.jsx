@@ -16,16 +16,15 @@ const ShowImage = () => {
 	const { id } = useParams();
 	const project = INFO.projects.find((proj) => proj.id === id);
 
-	console.log("project", project, "id", id);
 	return (
 		<React.Fragment>
 			<Helmet>
 				<title>{`Image of | ${project.title}`}</title>
-				{/* <meta name="description" content={currentSEO.description} /> */}
-				{/* <meta
+				<meta name="description" content={currentSEO.description} />
+				<meta
 					name="keywords"
 					content={currentSEO.keywords.join(", ")}
-				/> */}
+				/>
 			</Helmet>
 			<div className="page-content">
 				<NavBar active="show-image" />
@@ -41,7 +40,11 @@ const ShowImage = () => {
 							{project.title}
 						</div>
 						<div className="description show-images-description">
-							{project.description}
+							<span
+								dangerouslySetInnerHTML={{
+									__html: project.description,
+								}}
+							></span>
 						</div>
 						<div className="show-image-items-container">
 							<ShowTheImage project={project} />

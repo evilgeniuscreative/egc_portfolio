@@ -1,5 +1,3 @@
-const missing =
-	"This site no longer exists, but here's a screenshot of the original design.";
 let INFO = {
 	main: {
 		title: "Ian Kleinfeld, Software Developer, Front End Engineer, with a deep UX, UI, and Design background",
@@ -33,22 +31,23 @@ let INFO = {
 
 	animations: {
 		title: "Animations for Rally Software explaining Agile Metrics",
-		description: "A series of animations explaining agile metrics for rally software, to give an idea of how each major agile metric is explaining measured and relates to team performance.",
+		description:
+			"A series of animations explaining agile metrics for rally software, to give an idea of how each major agile metric is explaining measured and relates to team performance.",
 	},
-	images:{
+	showImage: {
 		title: "Project Image",
-		description: "Image of a project I worked on that is either a poster or a website that no longer exists",
-
+		description:
+			"Image of a project I worked on that is either a poster or a website that offline",
 	},
 	projects: [
 		{
-	id: "TURBOTAX",
+			id: "TURBOTAX",
 			title: "Intuit Turbotax Out-of-Product-Help Community",
 			type: "both",
 			thumb: "images/thumb-intuit.png",
 			description:
-				"Enhancing the Intuit Khoros Community, integrating  with various other Intuit apps: React library, data pulled with GraphQL,  A/B/C/D live user testing, Splunk queries &amp; user dashboards, and more.",	
-				logos: [
+				"Enhancing the Intuit Khoros Community, integrating  with various other Intuit apps: React library, data pulled with GraphQL,  A/B/C/D live user testing, Splunk queries &amp; user dashboards, and more.",
+			logos: [
 				{
 					id: "449",
 					software: "Khoros Community",
@@ -74,15 +73,15 @@ let INFO = {
 				{ id: "865", software: "SCSS", img: "images/sass.png" },
 			],
 			linkText: "View Project",
-			link: "https://ttlc.intuit.com/community/lower-your-debt/discussion/how-or-what-can-i-do-to-lower-my-debts/00/1882396",	
-				},
+			link: "https://ttlc.intuit.com/community/lower-your-debt/discussion/how-or-what-can-i-do-to-lower-my-debts/00/1882396",
+		},
 		{
 			id: "NCDOT",
 			title: "Vue vs Google Maps using NCDOT data",
 			type: "both",
 			thumb: "images/thumb-ncdot.png",
 			description:
-				"Play project pulling data from the North Carolina Department of transportation open APIs, Users can discover the traffic and construction incidents around the state.",
+				"Project just for fun pulling data from the North Carolina Department of transportation's open APIs. Users can discover the traffic and construction incidents around the state via Google Maps.",
 			logos: [
 				{ id: "0", software: "Vue", img: "images/vuejs.png" },
 				{ id: "99", software: "HTML", img: "images/html5.png" },
@@ -108,7 +107,7 @@ let INFO = {
 					img: "images/javascript.png",
 				},
 			],
-
+			linkText: "View Site demo design",
 			link: "https://evilgeniuscreative.com/Fidelity/",
 		},
 		{
@@ -117,7 +116,7 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-animation.png",
 			description:
-				"Animated introductions to Agile Metrics data analysis and tracking metrics for Rally Software.",
+				"Animated introductions explaining the basics of multiple Agile Metrics data analysis and performance tracking types for Rally Software. These were placed in the information section of the Rally site to help customer understanding.",
 			logos: [
 				{
 					id: "3211",
@@ -125,7 +124,7 @@ let INFO = {
 					img: "images/edgeanimate.png",
 				},
 			],
-
+			linkText: "View Project",
 			link: "/animation",
 		},
 		{
@@ -134,7 +133,7 @@ let INFO = {
 			type: "print",
 			thumb: "images/thumb-bdit.jpg",
 			description:
-				"A graphic design project for a magazine for Atlanta Restaurants. Designed entire magazine.	",
+				"A graphic design magazine project introducing Atlanta Restaurants for those who paid to be included in the final printing, to be distributed around Atlanta for promotion. Designed entire magazine.	",
 			logos: [
 				{
 					id: 96813,
@@ -142,6 +141,7 @@ let INFO = {
 					img: "images/icon-id.png",
 				},
 			],
+			linkText: "View Magazine",
 			link: "http://evilgeniuscreative.com/portfolio/pdf/bdit.php",
 		},
 		{
@@ -151,7 +151,7 @@ let INFO = {
 			thumb: "images/thumb-coffee-report.png",
 			file: "images/print/coffee-report.jpg",
 			description:
-				"A graphic design project for a Coffee Futures report. Designed entire report format.	",
+				"A graphic design project for a Coffee Futures report as an add-on product for aWhere for investors, based on weather and farming data from coffee growing regions around the world. Designed entire report format.	",
 			logos: [
 				{
 					id: 93813,
@@ -159,6 +159,7 @@ let INFO = {
 					img: "images/icon-id.png",
 				},
 			],
+			linkText: "View Report",
 			link: "http://evilgeniuscreative.com/portfolio/pdf/coffee.php",
 		},
 		{
@@ -194,7 +195,7 @@ let INFO = {
 				},
 				{ id: "90", software: "jQuery", img: "images/jquery.png" },
 			],
-			linkText: "View JMP Community",
+			linkText: "View JMP Community site",
 			link: "https://community.jmp.com",
 		},
 
@@ -220,7 +221,7 @@ let INFO = {
 				{ id: "87", software: "JSON", img: "images/json.png" },
 				{ id: "86", software: "SCSS", img: "images/sass.png" },
 			],
-			linkText: "View Project",
+			linkText: "View EA site and menu",
 			link: "https://answers.ea.com/t5/Answer-HQ-English/ct-p/AHQ-English",
 		},
 		{
@@ -243,7 +244,7 @@ let INFO = {
 				},
 				{ id: "84", software: "SCSS", img: "images/sass.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Roku site and tiles",
 			link: "https://community.roku.com",
 		},
 		{
@@ -261,15 +262,16 @@ let INFO = {
 				},
 			],
 			image: "farming.jpg",
+			linkText: "View Poster image",
 			link: "showimage/FARMING",
 		},
 		{
 			id: "BRUNSWICK",
-			title: "Brunswick Boating Companies Communities",
+			title: "Brunswick Boating Communities",
 			type: "devui",
 			thumb: "images/thumb-brunswick.png",
 			description:
-				"Four Khoros Communities built from one using top-level categories for Brunswick's Sea Ray Boats, Mercury Racing, Boston Whaler, and Ripl.",
+				"Four Khoros Communities built within a single Community CMS using top-level categories for boating company and association Brunswick's Sea Ray Boats, Mercury Racing, Boston Whaler, and Ripl.",
 			logos: [
 				{
 					id: "6",
@@ -283,13 +285,13 @@ let INFO = {
 				},
 				{ id: "82", software: "SCSS", img: "images/sass.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.brunswick.com/",
 		},
 
 		{
 			id: "MACMILLAN",
-			title: "Macmillan Communities redesign and sliding menus",
+			title: "Macmillan Communities redesign",
 			type: "devui",
 			thumb: "images/thumb-mcmillan.png",
 			description:
@@ -308,16 +310,16 @@ let INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.macmillanlearning.com/t5/macmillan-community/ct-p/college",
 		},
 		{
 			id: "SEPHORA",
-			title: "Sephora Community custom email formatting",
+			title: "Sephora Community custom emails",
 			thumb: "images/thumb-sephora.png",
 			type: "devui",
 			description:
-				"Worked closely with Sephora team to customize all Velocity-based Sephora Khoros Community emails to be consistent with the site design.",
+				"Worked closely with Sephora team to customize all Velocity-based Sephora Khoros Community emails to be consistent with the site design and easily understood by users to keep them informed and encourage them to visit the site more often.",
 			logos: [
 				{
 					id: "78",
@@ -332,7 +334,7 @@ let INFO = {
 				},
 				{ id: "75", software: "SCSS", img: "images/sass.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.sephora.com",
 		},
 		{
@@ -340,7 +342,7 @@ let INFO = {
 			title: "Verizon Community custom menu",
 			thumb: "images/thumb-verizon.png",
 			description:
-				"Created a custom JS menu in their Khoros Community to meet their specific needs, as well as other customizations as needed.",
+				"Recreated a custom JavaScript and HTML menu in Verizon's Khoros Community to better meet their user's needs, as well as numerous other Community customizations as needed.",
 			logos: [
 				{
 					id: "9",
@@ -354,16 +356,16 @@ let INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Project",
+			linkText: "View Community site and menu",
 			link: "https://community.verizon.com",
 		},
 		{
 			id: "SPLUNK",
-			title: "Splunk Community profile preferences customization",
+			title: "Splunk Community customization",
 			type: "dev",
 			thumb: "images/thumb-splunk.png",
 			description:
-				"Modified personal information of users to give the option to give lists of content that is specifically relevant to them based on their chosen preferences, or to turn it off.",
+				"Modified personal information structure of user profile to create the option to give customized lists of content shown to the user that is specifically relevant to them based on their chosen preferences, or to turn that function off.",
 			logos: [
 				{
 					id: "10",
@@ -377,7 +379,7 @@ let INFO = {
 				},
 				{ id: "71", software: "HTML5", img: "images/html5.png" },
 			],
-			linkText: "View Splunk Community",
+			linkText: "View Splunk Community site",
 			link: "https://community.splunk.com",
 		},
 		{
@@ -386,7 +388,7 @@ let INFO = {
 			type: "dev",
 			thumb: "images/thumb-invoca.png",
 			description:
-				"Customized sign in process to allow users to register and sign in all in one step.",
+				"Customized sign in process to allow users to register and sign in all in one step, creating automatic usernames based on their email and random numbers or words that users could change if they wanted to.",
 			logos: [
 				{
 					id: "11",
@@ -404,7 +406,7 @@ let INFO = {
 					img: "images/freemarker.png",
 				},
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.invoca.com",
 		},
 		{
@@ -414,7 +416,7 @@ let INFO = {
 			thumb: "images/thumb-zoom.png",
 
 			description:
-				"Created a customized (and optional) JSON fed tile display for the home page when they choose to display.",
+				"Created a customized (and optional) JSON fed tile display for the home page when administrators choose to display them. The JSON can be created by the site administrators and turned on or off in the admin panel.",
 			logos: [
 				{
 					id: "12",
@@ -433,16 +435,16 @@ let INFO = {
 				},
 				{ id: "65", software: "SCSS", img: "images/sass.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Community site and tiles",
 			link: "https://community.zoom.com",
 		},
 		{
 			id: "SISENSE",
-			title: "Khoros Community Salesforce integration",
+			title: "Salesforce integration",
 			type: "dev",
 			thumb: "images/thumb-sisense.png",
 			description:
-				"Helped to integrate Salesforce ticket tracking into their customer support system.",
+				"Helped to integrate a Salesforce ticket tracking system into the out of the box ticket system, giving Sisense more flexibilty, control, and data sets that they could keep in their own Salesforce instance. This dashboard is only available to administrators.",
 			logos: [
 				{
 					id: "13",
@@ -461,7 +463,7 @@ let INFO = {
 				},
 				{ id: "62", software: "XML", img: "images/xml.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.sisense.com",
 		},
 		{
@@ -470,7 +472,7 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-jamf.png",
 			description:
-				"Helped their staff to customize their site starting from basic HTML and CSS to the point where it is currently over 2 months of tutorials.",
+				"Engaged in two months of tutorials with their Community administrative and design staff to customize their site &mdash; starting from scratch with basic HTML and CSS to the point where they can mostly take care of Community changes themselves.",
 			logos: [
 				{
 					id: "14",
@@ -485,7 +487,7 @@ let INFO = {
 				},
 				{ id: "59", software: "SCSS", img: "images/sass.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.jamf.com",
 		},
 		{
@@ -493,10 +495,8 @@ let INFO = {
 			title: "ESP Nutrition e-Commerce Site",
 			type: "both",
 			thumb: "images/thumb-ESP.png",
-
-			msg: missing,
 			description:
-				"Nutritional supplement e-commerce site built in WordPress and Shopped plug-in. (2011).",
+				"Nutritional supplement and bodybuilding e-commerce site built in pre-Gutenberg WordPress and Shopped plug-in, with additional custom-made plugins and theme. Shop is offline. (2011).",
 			logos: [
 				{
 					id: "15",
@@ -510,15 +510,16 @@ let INFO = {
 				},
 			],
 			image: "ESP.jpg",
+			linkText: "View Site screenshot; site offline",
 			link: "showimage/ESP",
 		},
 		{
 			id: "XACTLY",
-			title: "Xactly corp Community customizations",
+			title: "Xactly Community customizations",
 			type: "dev",
 			thumb: "images/thumb-xactly.png",
 			description:
-				"Multiple customizations including sign in process, automated data filling, event management, and more.",
+				"Multiple Khoros Community customizations including an advanced, semi-automated sign in process, automated data filling, significantly improved customized event management to be used by administrators, and more.",
 			logos: [
 				{
 					id: "16",
@@ -536,16 +537,17 @@ let INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://community.xactlycorp.com",
 		},
 		{
 			id: "COAR",
 			title: "Cisco OAuth Registry",
 			type: "both",
+			what: "screenshot",
 			thumb: "images/thumb-coar.png",
 			description:
-				"Working mockup for Cisco OAuth Registry built in Angular 1.x in Typescript in preparation for Angular 2, along with multiple other in-house apps and designs.",
+				"Working mockup for Cisco OAuth Registry built in Angular 1.x with Typescript in preparation for the completely redesigned, structured Angular 2. This allowed users to renew their OAuth credentials as needed. Many other customizations, designs, mockups, and wireframes for the in-house Enhancements and Bug tracker systerm, being upgraded from an older, Google website building language and framework.",
 			logos: [
 				{ id: "17", software: "AngularJS", img: "images/angular.png" },
 				{
@@ -555,12 +557,12 @@ let INFO = {
 				},
 				{ id: "55", software: "Less", img: "images/less.png" },
 			],
-			linkText: "View Project",
+			linkText: "View Example Project",
 			link: "https://evilgeniuscreative.com/portfolio/COAR/index.php",
 		},
 		{
 			id: "WEATHERAPP",
-			title: "aWhere: Created weather app and living Style Guide",
+			title: "aWhere: Weather app and Style Guide",
 			type: "both",
 			thumb: "images/thumb-awhere-weather-app.jpg",
 			description:
@@ -571,7 +573,7 @@ let INFO = {
 				{ id: "53", software: "SCSS", img: "images/sass.png" },
 				{ id: "52", software: "HTML5", img: "images/html5.png" },
 			],
-			linkText: "Company no longer exists; LinkedIn page",
+			linkText: "See app screenshot, site offline ",
 			image: "weatherapp.jpg",
 			link: "showimage/WEATHERAPP",
 		},
@@ -581,7 +583,7 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-jmp.png",
 			description:
-				"Worked in concert with the marketing and design team to create numerous pages and customizations in the JMP (a subsidiary of SAS) AEM company site..",
+				"Worked in concert with the marketing and design team to create numerous pages, forms, and both AEM and JavaScript customizations in the JMP (a subsidiary of SAS) AEM company site.",
 			logos: [
 				{ id: "19", software: "AEM", img: "images/aem.jpg" },
 				{ id: "51", software: "Less", img: "images/less.png" },
@@ -591,7 +593,7 @@ let INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Project",
+			linkText: "View Community site",
 			link: "https://jmp.com",
 		},
 		{
@@ -600,7 +602,7 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-jds.png",
 			description:
-				"Created the original discovery summit site and managed pages in AEM.",
+				"Created the original Discovery Summit site and managed various contents and acted as site administrator in AEM. Discovery Summit is an annual meeting of JMP users and developers that offers seminars, tutorials, meetups, and more.",
 			logos: [
 				{ id: "20", software: "AEM", img: "images/aem.jpg" },
 				{ id: "49", software: "Less", img: "images/less.png" },
@@ -610,7 +612,7 @@ let INFO = {
 					img: "images/javascript.png",
 				},
 			],
-			linkText: "View Project",
+			linkText: "View Community section",
 			link: "https://discoverysummit.jmp",
 		},
 		{
@@ -619,7 +621,7 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-cbc.png",
 			description:
-				"CBC needed to renew their site and this was the top design at the time. Image only due to many changes on the site. (2014)",
+				"In 2014, Capitol Broadcasting Company in Raleigh, NC, needed to renew their ageing site &mdash; this was the chosen design to create the new site. Image only due to many changes on the site since this design.",
 			logos: [
 				{ id: "219", software: "HTML", img: "images/html5.png" },
 				{ id: "141", software: "SASS", img: "images/sass.png" },
@@ -630,6 +632,7 @@ let INFO = {
 				},
 			],
 			image: "cbc.jpg",
+			linkText: "View Site screenshot, site changed",
 			link: "showimage/CBC",
 		},
 		{
@@ -638,7 +641,7 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-danser.png",
 			description:
-				"Screenshot of a guitar-shaped customized theme and plugins Wordpress site for a custom luthier and builder. Site is no longer this design. (2014).",
+				"Screenshot of a guitar-shaped customized theme and plugins in a Wordpress site for a high-end custom luthier who fixes and builds custom guitars. This design stood for many years until early 2020s, and now the site is no longer this design, now hosted on Wix. (2014).",
 			logos: [
 				{
 					id: "210",
@@ -654,6 +657,7 @@ let INFO = {
 				{ id: "295", software: "PHP", img: "images/php.png" },
 			],
 			image: "danser.jpg",
+			linkText: "View Site screenshot, site changed",
 			link: "showimage/DANSER",
 		},
 		{
@@ -662,13 +666,33 @@ let INFO = {
 			type: "both",
 			thumb: "images/thumb-los-olivos.png",
 			description:
-				"Former raw foods online shopping site based on a WordPress Shopp plug-in. Image only. (2013).",
+				"Former raw foods online shopping site based on a WordPress Shopp plug-in and customized theme and other customized plugins. Store closed during the pandemic, so only an original mockup is available. (2013).",
 			logos: [
 				{ id: "2", software: "Wordpress", img: "images/wordpress.png" },
 				{ id: "95", software: "PHP", img: "images/php.png" },
 			],
 			image: "los-olivos.jpg",
+			linkText: "View Site screenshot, site offline",
 			link: "showimage/LOSOLIVOS",
+		},
+		{
+			id: "Challenger",
+			show: false,
+			title: "Challenger Disaster Chart",
+			type: "print",
+			thumb: "images/thumb-challenger.jpg",
+			description:
+				"<p>The power to save lives through proper, simple data visualizations, as seen in these contrasting charts of the causes of the Challenger disaster. (Tufte, Edward, 1997). </p><p>The first chart, created by NASA engineers trying and failing to communicate the dangers of low-outside-temperature launches, and Tufte's redesign, which clearly shows the danger and could have prevented seven tragic deaths and many millions of dollars, as well as damage to public confidence in NASA.</p><p>In healthcare, the stakes are even higher, and can affect thousants or millions of lives. A common lesson in data visualization is that the simpler the chart, the more effective it is. This is a great example of that. A common theme in effective data visualization is to find the simplest way to show the data so it can be instantly understood. Fancier versions can be made later, but the first responsibility is to communicate the information.</p>",
+			logos: [
+				{
+					id: 1997,
+					software: "Photoshop",
+					img: "images/photoshop.png",
+				},
+			],
+			image: "challenger.jpg",
+			linkText: "View Challenger Disaster Chart",
+			link: "showimage/Challenger",
 		},
 	],
 	animation: [

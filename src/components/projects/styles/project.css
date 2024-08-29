@@ -25,7 +25,6 @@
 .project-container {
 	padding: 30px;
 	margin: 8px;
-	
 }
 
 .project-logo-wrap {
@@ -55,7 +54,9 @@
 
 .project-description {
 	color: var(--secondary-color);
-	margin-top:15px;
+	height: 145px;
+	margin-top: 15px;
+	overflow: hidden;
 }
 
 .project-link {
@@ -67,51 +68,54 @@
 }
 
 .project-link-section {
-	display: flex;
-	align-items: left;
-}
-
-.project-link-icon {
-	color: var(--secondary-color);
-	font-size: 13px;
+	padding-top: 10px !important;
 }
 
 .project-link-text {
+	background-color: var(--lightest-gray);
 	color: var(--secondary-color);
-	padding-left: 25px;
+	display: block;
 	font-weight: 700;
-	font-size:13px;
-	margin-top:-22px;
+	font-size: 13px;
+	text-align: center;
+	padding: 3px 5px;
+	transition: all, 0.3s;
+}
+.project-link-text:hover {
+	background-color: var(--secondary-color);
+	color: var(--lightest-gray);
+	border-radius: 10px;
+	transition: all, 0.3s;
 }
 
-
-
-.project-thumb{
+.project-thumb-section {
+	height: 125px;
+}
+.project-thumb {
 	height: 125px;
 	display: block;
 	width: audo;
 	max-width: 100%;
 	background-size: cover;
 	background-position: cemter center;
-	overflow:hiddenl
-	             
+	overflow: hidden;
 }
-.project-thumb-img{
+.project-thumb-img {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
 }
 
-.project-linkurl{
+.project-linkurl {
 	color: var(--secondary-color);
 	font-size: 12px;
 	padding-top: 20px;
 }
 
-.projecct-thumb{
+.projecct-thumb {
 	padding-top: 10px;
-	height:160px;
-	width:225px;
+	height: 160px;
+	width: 225px;
 }
 
 @media (max-width: 600px) {

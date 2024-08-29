@@ -34,6 +34,7 @@
 			}
 			.x-axis {
 				fill: black;
+				font-size: 11px;
 			}
 		</style>
 	</head>
@@ -90,7 +91,7 @@
 			];
 
 			const width = 500;
-			const height = Math.min(width, 350);
+			const height = Math.min(width, 300);
 			const radius = Math.min(width, height) / 2;
 
 			const arc = d3
@@ -118,12 +119,23 @@
 
 			const svg = d3
 				.select("#pie-chart")
-				.attr("style", "padding:40px;")
 				.append("svg")
 				.attr("width", width)
 				.attr("height", height)
 				.attr("viewBox", [-width / 2, -height / 2, width, height])
-				.attr("style", "max-width: 100%; height: auto;");
+				.attr(
+					"style",
+					"max-width: 100%; height: auto; overflow: visible; padding: 40px;"
+				);
+
+			const title = svg
+				.append("text")
+				.attr("x", 0)
+				.attr("y", -height / 2 - 25)
+				.attr("text-anchor", "middle")
+				.attr("font-size", "16px")
+				.attr("font-weight", "bold")
+				.text("Monthly Expenses");
 
 			const g = svg.append("g");
 
@@ -178,6 +190,7 @@
 								text.append("tspan")
 									.attr("y", "-0.4em")
 									.attr("font-weight", "bold")
+									.attr("font-size", "1.2em")
 									.text((d) => `${d.data.name}`);
 							})
 							.call((text) => {
@@ -207,6 +220,7 @@
 								text.append("tspan")
 									.attr("y", "-0.4em")
 									.attr("font-weight", "bold")
+									.attr("font-size", "1.2em")
 									.text((d) => `${d.data.name}`);
 							})
 							.call((text) => {
@@ -235,7 +249,6 @@
 			}
 
 			updateChart(pieData);
-
 			setInterval(() => {
 				const newData = generateRandomData();
 				updateChart(newData);
@@ -300,6 +313,15 @@
 						`max-width: ${bwidth}px; height: auto; font: 10px sans-serif; overflow: visible;`
 					);
 
+				const title = bsvg
+					.append("text")
+					.attr("x", "120%")
+					.attr("y", height / 3.35)
+					.attr("text-anchor", "middle")
+					.attr("font-size", "16px")
+					.attr("font-weight", "bold")
+					.text("Sales by Company");
+
 				const bar = bsvg
 					.append("g")
 					.attr("fill", "darkgreen")
@@ -319,7 +341,7 @@
 					.selectAll("text")
 					.attr("fill", "black")
 					.attr("class", "x-axis")
-					.attr("transform", "rotate(-90)")
+					.attr("transform", "rotate(-60)")
 					.style("text-anchor", "end")
 					.attr("dx", "-1.5em")
 					.attr("dy", "-0.5em");
@@ -369,6 +391,7 @@
 			}
 
 			const update = () => {
+				console.log("order:", order.value);
 				barData.sort(orderFn(order));
 				chart.update(barData);
 				d3.selectAll("text").attr("fill", "black");

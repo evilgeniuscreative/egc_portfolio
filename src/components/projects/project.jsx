@@ -1,15 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles/project.css";
+
+const truncate = (str) => {
+	if (str.length > 195) {
+		str = str.length > 195 ? str.substring(0, 195) : str;
+		while (str.lastIndexOf(" ") !== -1 && str[str.length - 1] !== " ") {
+			str = str.substring(0, str.length - 1);
+		}
+		str = str + " ...";
+	}
+
+	return str;
+};
 
 const Project = (props) => {
 	const { softwareLogos, title, description, linkText, link, thumb, type } =
 		props;
 
 	let tempType = "dev";
+
 	switch (type) {
 		case "design":
 			tempType = "design";
@@ -24,9 +35,9 @@ const Project = (props) => {
 			tempType = "Graphic Design";
 			break;
 		default:
+			tempType = "Design and Development";
 			break;
 	}
-	console.log("softwareLogos", softwareLogos);
 
 	const theLogos = softwareLogos.map((logo) => {
 		const rndNum = Math.floor(Math.random() * 10000);
@@ -40,7 +51,6 @@ const Project = (props) => {
 			</span>
 		);
 	});
-	console.log("const", theLogos);
 
 	return (
 		<React.Fragment>
@@ -54,21 +64,18 @@ const Project = (props) => {
 
 						<div className="project-thumb-section">
 							<div
-								href={linkText}
 								className="project-thumb"
 								style={{ backgroundImage: `url(${thumb})` }}
 							></div>
 						</div>
-						<div className="project-description">{description}</div>
-
-						<div className="project-link-icon"></div>
-
-						<div className="product-link-section">
-							<FontAwesomeIcon
-								className="project-link-icon"
-								icon={faLink}
-							/>
-							<div className="project-link-text">{link}</div>
+						<div
+							className="project-description"
+							dangerouslySetInnerHTML={{
+								__html: truncate(description),
+							}}
+						></div>
+						<div className="project-link-section">
+							<div className="project-link-text">{linkText}</div>
 						</div>
 					</div>
 				</Link>

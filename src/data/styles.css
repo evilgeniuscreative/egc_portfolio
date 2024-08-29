@@ -4,6 +4,7 @@
 	--secondary-color: #65656d;
 	--tertiary-color: #acacb4;
 	--quaternary-color: #e4e4e7;
+	--lightest-gray: #efefef;
 	--link-color: #14b8a6;
 	/* ---------------------- */
 
@@ -14,7 +15,6 @@
 
 	/* ------- general ------- */
 	--border-color: var(--tertiary-color);
-	--radius: 3px; 
+	--radius: 3px;
 	--radius-large: 5px;
 }
-
