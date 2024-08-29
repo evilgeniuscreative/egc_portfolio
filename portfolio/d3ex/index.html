@@ -42,6 +42,7 @@
 		<h1>D3 Chart Examples</h1>
 		<div class="dashboard">
 			<div id="pie-chart"></div>
+			<div id="arc-chart"></div>
 			<div id="bar-chart">
 				<form>
 					<fieldset>
@@ -91,18 +92,17 @@
 			];
 
 			const width = 500;
-			const height = Math.min(width, 300);
-			const radius = Math.min(width, height) / 2;
+			const height = 250; // Adjust height to be half for half-donut
+			const radius = Math.min(width, height * 2) / 2;
 
-			const arc = d3
-				.arc()
-				.innerRadius(radius * 0.67)
-				.outerRadius(radius - 1);
+			const arc = d3.arc().innerRadius(100).outerRadius(200);
 
 			const pie = d3
 				.pie()
 				.padAngle(1 / radius)
 				.sort(null)
+				.startAngle(-Math.PI / 2) // Start at the top (12 o'clock position)
+				.endAngle(Math.PI / 2) // End at the bottom (6 o'clock position)
 				.value((d) => d.value);
 
 			let color = d3
@@ -121,23 +121,25 @@
 				.select("#pie-chart")
 				.append("svg")
 				.attr("width", width)
-				.attr("height", height)
-				.attr("viewBox", [-width / 2, -height / 2, width, height])
+				.attr("height", height) // Adjust height to fit half-donut
+				.attr("viewBox", [-width / 2, 0, width, height]) // Adjust viewBox for half-donut
 				.attr(
 					"style",
-					"max-width: 100%; height: auto; overflow: visible; padding: 40px;"
+					"max-width: 100%; height: auto; overflow: visible;"
 				);
 
 			const title = svg
 				.append("text")
 				.attr("x", 0)
-				.attr("y", -height / 2 - 25)
+				.attr("y", -height + 20) // Position title above the half-donut
 				.attr("text-anchor", "middle")
 				.attr("font-size", "16px")
 				.attr("font-weight", "bold")
 				.text("Monthly Expenses");
 
-			const g = svg.append("g");
+			const g = svg
+				.append("g")
+				.attr("transform", `translate(0, ${height})`); // Center the half-donut in the SVG
 
 			function updateChart(data) {
 				if (!data || data.length === 0) {
@@ -149,7 +151,18 @@
 
 				const path = g.selectAll("path").data(arcs);
 
-				const color = d3.scaleOrdinal(d3.schemeCategory10);
+				// Define the color scale
+				let acolor = d3
+					.scaleOrdinal()
+					.domain(pieData.map((d) => d.name))
+					.range(
+						d3
+							.quantize(
+								(t) => d3.interpolateSpectral(t * 0.8 + 0.1),
+								pieData.length
+							)
+							.reverse()
+					);
 
 				path.join(
 					(enter) => {
@@ -190,7 +203,7 @@
 								text.append("tspan")
 									.attr("y", "-0.4em")
 									.attr("font-weight", "bold")
-									.attr("font-size", "1.2em")
+									.attr("font-size", "12px")
 									.text((d) => `${d.data.name}`);
 							})
 							.call((text) => {
@@ -200,6 +213,7 @@
 									.append("tspan")
 									.attr("x", 0)
 									.attr("y", "0.7em")
+									.attr("font-size", "12px")
 									.attr("fill-opacity", 0.7)
 									.text(
 										(d) =>
@@ -220,12 +234,13 @@
 								text.append("tspan")
 									.attr("y", "-0.4em")
 									.attr("font-weight", "bold")
-									.attr("font-size", "1.2em")
+									.attr("font-size", "12px")
 									.text((d) => `${d.data.name}`);
 							})
 							.call((text) => {
 								text.append("tspan")
 									.attr("font-weight", "normal")
+									.attr("font-size", "12px")
 									.attr("x", 0)
 									.attr("y", "0.7em")
 									.text(
@@ -253,6 +268,95 @@
 				const newData = generateRandomData();
 				updateChart(newData);
 			}, 3000);
+
+			//------- ARC CHART -------//
+
+			// Data
+			let arcData = [
+				{ name: "Rent", value: 72500 },
+				{ name: "Wages", value: 92214 },
+				{ name: "Utilities", value: 64502 },
+				{ name: "Supplies", value: 58234 },
+				{ name: "Misc", value: 62992 },
+			];
+
+			// Set dimensions
+			const awidth = 500;
+			const aheight = 250; // Adjust height to be half of the width for a half-circle
+
+			// Define the arc generator
+			const aarc = d3
+				.arc()
+				.innerRadius(100) // Adjust if you want a donut chart (set to 0 for pie chart)
+				.outerRadius(200)
+				.startAngle((d) => d.startAngle) // Start angle will be calculated by pie
+				.endAngle((d) => d.endAngle); // End angle will be calculated by pie
+
+			// Define the pie generator
+			const apie = d3
+				.pie()
+				.sort(null) // Keep the order of the data as is
+				.value((d) => d.value) // Define the value accessor
+				.startAngle(-Math.PI / 2) // Start the pie at the top (-90 degrees)
+				.endAngle(Math.PI / 2); // End the pie at the bottom (90 degrees)
+
+			// Define the color scale
+			let acolor = d3
+				.scaleOrdinal()
+				.domain(arcData.map((d) => d.name))
+				.range(
+					d3
+						.quantize(
+							(t) => d3.interpolateSpectral(t * 0.8 + 0.1),
+							arcData.length
+						)
+						.reverse()
+				);
+
+			// Create the SVG container
+			const asvg = d3
+				.select("#arc-chart")
+				.append("svg")
+				.attr("width", awidth)
+				.attr("height", aheight)
+				.attr("viewBox", [-awidth / 2, 0, awidth, aheight]) // Adjust viewBox for half-circle
+				.attr(
+					"style",
+					"max-width: 100%; height: auto; overflow: visible;"
+				);
+
+			// Add a title
+			const atitle = asvg
+				.append("text")
+				.attr("x", 0)
+				.attr("y", -aheight / 2 + 20)
+				.attr("text-anchor", "middle")
+				.attr("font-size", "16px")
+				.attr("font-weight", "bold")
+				.text("Monthly Expenses");
+
+			// Append the group that will hold the arcs
+			const ag = asvg
+				.append("g")
+				.attr("transform", `translate(0,${aheight})`); // Translate to the bottom of the SVG
+
+			// Create the arcs and bind data
+			ag.selectAll("path")
+				.data(apie(arcData))
+				.join("path")
+				.attr("d", aarc)
+				.attr("fill", (d) => acolor(d.data.name))
+				.attr("stroke", "white")
+				.style("stroke-width", "2px");
+
+			// Optionally, add labels
+			ag.selectAll("text")
+				.data(apie(arcData))
+				.join("text")
+				.attr("transform", (d) => `translate(${aarc.centroid(d)})`)
+				.attr("text-anchor", "middle")
+				.attr("font-size", "10px")
+				.text((d) => d.data.name);
 
 			//--------------------------------------------------------------------------------//
 			// sortable bar chart
